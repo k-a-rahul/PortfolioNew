@@ -22,11 +22,10 @@ const skills = "< Skills Gained So Far/>";
 
 function Home() {
   const sendEmail = (e) => {
-    const formref = useRef();
     e.preventDefault();
 
     emailjs
-      .sendForm(`${serviceid}`, `${templateid}`, formref.current, {
+      .sendForm(`${serviceid}`, `${templateid}`, {
         publicKey: `${publicKey}`,
       })
       .then(
@@ -209,7 +208,6 @@ function Home() {
           <div className="h-screen w-screen flex justify-center items-center text-center">
             <div className="w-[50%] h-[70%] bg-slate-200 ">
               <form
-                ref={formref}
                 className="bg-white w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
               >
                 <label className="block text-gray-700 text-2xl font-bold mb-2">
