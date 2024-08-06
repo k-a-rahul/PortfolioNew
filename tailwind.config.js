@@ -18,6 +18,9 @@ export default {
         "bounce-short": "bounce 20s linear infinite ",
         "pulse-short": "pulse 10s ease-in-out infinite ",
       },
+      screens:{
+        'sd':'320px'
+      }
     },
   },
   plugins: [],

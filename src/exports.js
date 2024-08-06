@@ -15,6 +15,10 @@ import BLUESKY  from '../src/Assets/Bluesky.jpg'
 import SKY  from '../src/Assets/Sky.jpg'
 import MOUNTAIN  from '../src/Assets/Mountain.png'
 import STARS  from '../src/Assets/stars.png'
+import MYPIC  from '../src/Assets/MyPicAlter2.png'
+import MOUNTAIN2  from '../src/Assets/Mountain2.png'
+import ROAD  from '../src/Assets/Road2.png'
+
 
 
 export const technicalskills = [
@@ -69,6 +73,9 @@ export {MOUNTAIN};
 export {STARS};
 export {SKY};
 export {CLOUDS};
+export {MYPIC};
+export {MOUNTAIN2};
+export {ROAD};
 
 
 
