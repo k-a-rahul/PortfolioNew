@@ -17,8 +17,6 @@ import {
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./Navbar";
 import { publicKey, serviceid, templateid } from "../const";
-import { useRef } from "react";
-import Modal from "../Components/Modal";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<The Projects Done/>";
