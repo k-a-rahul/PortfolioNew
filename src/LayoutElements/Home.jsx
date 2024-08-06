@@ -25,7 +25,6 @@ const projects = "<The Projects Done/>";
 const skills = "<The Ultimate Skills/>";
 
 function Home() {
-  const modalref = useRef()
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -45,7 +44,6 @@ function Home() {
 
   return (
     <>
-      <Modal ref= {modalref}/>
       <Parallax pages={4}>
         <ParallaxLayer offset={0} speed={1.5}>
           <div className="h-[1150vh] w-screen visible  bg-gray-300"> </div>
