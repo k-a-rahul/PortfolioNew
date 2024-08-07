@@ -17,6 +17,7 @@ import {
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./Navbar";
 import { publicKey, serviceid, templateid } from "../const";
+import { Slider } from "../Components/Slider";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<The Projects Done/>";
@@ -74,7 +75,7 @@ function Home() {
         <ParallaxLayer offset={0} speed={0.7}>
           <Navbar />
           <div
-            className={`w-screen h-screen text-center flex flex-col justify-evenly -mt-24 items-center sm:mt-0 sm:p-4 md:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
+            className={`w-screen h-screen text-center flex flex-col justify-center -mt-28 items-center sm:mt-0 sm:p-4 md:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
           >
             <div
               id="one"
@@ -124,12 +125,11 @@ function Home() {
             </div>
             <div
               id="scrollAnime"
-              className="absolute bottom-0 invisible md:visible"
+              className="absolute bottom-0"
             >
               <Lottie
                 animationData={SCROLL}
                 loop
-                className="invisible md:visible"
               />
             </div>
             <div className="absolute -bottom-1/2">
@@ -141,7 +141,7 @@ function Home() {
         </ParallaxLayer>
         {/* Skill Cards here  */}
         <ParallaxLayer offset={1} speed={0.65}>
-          <div className="w-screen h-screen overflow-scroll md:overflow-hidden">
+          <div className="w-screen h-screen md:overflow-hidden">
             <div
               className={`mt-8 md:mt-3 w-screen h-screen flex flex-col justify-start items-center gap-6 md:flex-row md:justify-evenly md:items-center md:flex-wrap md:gap-0`}
             >
@@ -173,17 +173,18 @@ function Home() {
         </ParallaxLayer>
         {/* right Moveable divs started here */}
         <ParallaxLayer offset={2} speed={0.5}>
-          <div className="bg-background w-screen h-screen flex justify-center items-center text-center">
-            <div className="absolute top-0 text-center flex justify-center">
+          <div className="w-screen h-screen flex justify-center items-center text-center">
+            <div className="absolute top-[20%] md:-top-[30%] text-center flex justify-center">
               <p className="text-2xl text-center md:text-6xl font-semibold font-mono text-lighttext">
                 {projects}
               </p>
             </div>
             <div
-              id="card"
-              className="w-full h-full flex flex-col justify-around items-center md:flex-row md:justify-around md:items-center p-2  "
+              id="mainDiv"
+              className=" w-[95%] h-[50%] object-cover flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center  "
             >
-              <div className="bg-blue-600 flex flex-col justify-center items-center text-center md:w-[30%] h-[75%]" id="img">
+              <Slider />
+              {/* <div className="md:w-[30%] h-[75%] bg-blue-600 flex flex-col justify-center items-center text-center " id="img">
               <span className="text-2xl md:text-6xl font-semibold font-mono text-lighttext">
                   Schooling
                 </span>
@@ -202,9 +203,9 @@ function Home() {
                   Govt Senior Secondary School, Pathankot,Punjab
                 </p>
               </div>
-              <div className="md:w-[30%]" id="img">
+              <div className="bg-green-500 md:w-[30%] h-[75%]" id="img">
                 
-              </div>
+              </div> */}
             </div>
           </div>
         </ParallaxLayer>
