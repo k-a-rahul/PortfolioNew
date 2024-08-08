@@ -1,11 +1,19 @@
 import { useState } from "react";
+import { IoChevronForwardCircleOutline } from "react-icons/io5";
+import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 export const Slider = () => {
   const [index, setIndex] = useState(0);
-  const switcher = () => {
+  const prevSwitch = () => {
+    setIndex((prev) => prev - 1);
+    if (index == 0) {
+      setIndex(3);
+    }
+  };
+  const nextSwitch = () => {
     setIndex((prev) => prev + 1);
-    if(index == 3){
-        setIndex(0)
+    if (index == 3) {
+      setIndex(0);
     }
   };
   const images = [
@@ -21,21 +29,29 @@ export const Slider = () => {
   return (
     <div
       id="imageslider"
-      className="w-full h-full flex justify-center items-center delay-200 transition-all"
+      className="w-full h-full flex justify-center items-center"
     >
-      <div className="flex justify-center items-center">
-        <img src={images[index]} alt="" className="w-[100%] md:w-[80%] transition-all delay-100"  />
+      <div className="w-full flex justify-center items-center  ">
+        <img
+          src={images[index]}
+          alt="image"
+          className="w-[95%] md:w-[70%] "
+        />
+        <div className="w-[90%] md:w-[70%] absolute top-[1/2]  flex justify-between md:justify-between items-center delay-75 transition-all">
+          <div>
+            <IoChevronBackCircleOutline
+              onClick={prevSwitch}
+              className="text-3xl md:text-5xl text-white cursor-pointer delay-[50ms] transition-all md:hover:scale-125 "
+            />
+          </div>
+          <div>
+            <IoChevronForwardCircleOutline
+              onClick={nextSwitch}
+              className="text-3xl md:text-5xl text-white cursor-pointer delay-[50ms] transition-all md:hover:scale-125"
+            />
+          </div>
+        </div>
       </div>
-
-      {/* <img src={two} alt="" className="w-[65%]"/>
-      <img src={three} alt="" className="w-[65%]"/>
-      <img src={four} alt="" className="w-[65%]"/> */}
-      <button
-        onClick={switcher}
-        className="absolute bottom-10 text-2xl p-2 text-white cursor-pointer rounded-md bg-teal-600 hover:bg-teal-700"
-      >
-        Switch
-      </button>
     </div>
   );
 };

@@ -18,6 +18,8 @@ import STARS  from '../src/Assets/stars.png'
 import MYPIC  from '../src/Assets/MyPicAlter2.png'
 import MOUNTAIN2  from '../src/Assets/Mountain2.png'
 import ROAD  from '../src/Assets/Road2.png'
+import TODO  from '../src/Assets/TodoImage.jpg'
+import RESUME  from '../src/Assets/Resume.jpg'
 
 
 
@@ -76,6 +78,8 @@ export {CLOUDS};
 export {MYPIC};
 export {MOUNTAIN2};
 export {ROAD};
+export {TODO};
+export {RESUME};
 
 
 

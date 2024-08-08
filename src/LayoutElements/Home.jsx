@@ -6,41 +6,27 @@ import {
   BLUESKY,
   CLOUDS,
   HELLOWRITER,
+  MAN,
   MOUNTAIN,
   MOUNTAIN2,
-  ROAD,
-  SCHOOL,
+  RESUME,
   SCROLL,
-  SKY,
   technicalskills,
 } from "../exports";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./Navbar";
 import { publicKey, serviceid, templateid } from "../const";
 import { Slider } from "../Components/Slider";
+import Modal from "../Components/Modal";
+import { useRef } from "react";
 
 const Myname = "<Rahul-Kumar/>";
-const projects = "<The Projects Done/>";
-const skills = "<The Ultimate Skills/>";
+const projects = "<Projects/>";
+const skills = "<Skills/>";
 
 function Home() {
-  const sendEmail = (e) => {
-    e.preventDefault();
 
-    emailjs
-      .sendForm(`${serviceid}`, `${templateid}`, {
-        publicKey: `${publicKey}`,
-      })
-      .then(
-        () => {
-          console.log("SUCCESS!");
-        },
-        (error) => {
-          console.log("FAILED...", error.text);
-        }
-      );
-  };
-
+  const modalref = useRef() 
   return (
     <>
       <Parallax pages={4}>
@@ -96,7 +82,7 @@ function Home() {
                 className="text-center w-[100%] md:w-[420px] lg:w-[580px] text-pretty p-5 lg:p-6"
               >
                 <span>
-                  <p className="text-2xl md:text-6xl font-semibold font-mono text-lighttext">
+                  <p className="text-2xl md:text-6xl font-bold font-mono text-lighttext">
                     {Myname}
                   </p>{" "}
                   <p className="text-xl md:text-4xl font-mono font-semibold text-lighttext">
@@ -125,15 +111,15 @@ function Home() {
             </div>
             <div
               id="scrollAnime"
-              className="absolute bottom-0"
+              className="invisible lg:visible absolute bottom-0"
             >
               <Lottie
                 animationData={SCROLL}
                 loop
               />
             </div>
-            <div className="absolute -bottom-1/2">
-              <p className="text-2xl md:text-6xl font-semibold font-mono text-lighttext">
+            <div className=" invisible md:visible absolute -bottom-1/2">
+              <p className="text-2xl md:text-6xl font-bold font-mono text-lighttext">
                 {skills}
               </p>
             </div>
@@ -141,15 +127,15 @@ function Home() {
         </ParallaxLayer>
         {/* Skill Cards here  */}
         <ParallaxLayer offset={1} speed={0.65}>
-          <div className="w-screen h-screen md:overflow-hidden">
+          <div className="w-screen h-screen  md:overflow-hidden">
             <div
-              className={`mt-8 md:mt-3 w-screen h-screen flex flex-col justify-start items-center gap-6 md:flex-row md:justify-evenly md:items-center md:flex-wrap md:gap-0`}
+              className={`mt-8 md:mt-6 w-screen h-screen flex flex-col justify-start items-center gap-6 md:flex-row md:justify-center md:items-center md:flex-wrap md:gap-4`}
             >
               {technicalskills.map((Card) => {
                 return (
                   <div
                     key={Card.name}
-                    className="bg-background group rounded-xl cursor-default w-[90%] md:w-[27%] md:h-[275px] text-white flex flex-col justify-center text-center items-center p-2 delay-[50ms] transition-all"
+                    className="bg-background group rounded-xl cursor-default w-[90%] md:w-[30%] md:h-[240px] lg:h-[260px] text-white flex flex-col justify-center text-center items-center hover:scale-105 p-2 delay-75 transition-all"
                   >
                     <img
                       id="skillcard"
@@ -161,7 +147,7 @@ function Home() {
                       {Card.value}
                     </span>
                     <div>
-                      <p className="p-2 text-sm md:text-base lg:text-lg text-white tracking-tighter lg:tracking-normal">
+                      <p className="p-2 text-xs md:text-sm text-white tracking-tight lg:tracking-normal">
                         {Card.text}
                       </p>
                     </div>
@@ -173,55 +159,31 @@ function Home() {
         </ParallaxLayer>
         {/* right Moveable divs started here */}
         <ParallaxLayer offset={2} speed={0.5}>
-          <div className="w-screen h-screen flex justify-center items-center text-center">
-            <div className="absolute top-[20%] md:-top-[30%] text-center flex justify-center">
+          <div className="w-screen  h-screen flex justify-center items-center text-center">
+            <div className="invisible md:visible absolute top-[20%] md:-top-[20%] text-center flex justify-center">
               <p className="text-2xl text-center md:text-6xl font-semibold font-mono text-lighttext">
                 {projects}
               </p>
             </div>
             <div
               id="mainDiv"
-              className=" w-[95%] h-[50%] object-cover flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center  "
+              className="w-screen object-cover flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center "
             >
               <Slider />
-              {/* <div className="md:w-[30%] h-[75%] bg-blue-600 flex flex-col justify-center items-center text-center " id="img">
-              <span className="text-2xl md:text-6xl font-semibold font-mono text-lighttext">
-                  Schooling
-                </span>
-                <p className="p-2 text-sm md:text-base lg:text-lg text-white tracking-tighter lg:tracking-normal">
-                  Govt Senior Secondary School, Pathankot,Punjab
-                </p>
-              </div>
-              <div
-                className="md:w-[30%] h-[75%] bg-red-600 text-center flex flex-col justify-end items-center text-white"
-                id="card-content"
-              >
-                <span className="text-2xl md:text-6xl font-semibold font-mono text-lighttext">
-                  Schooling
-                </span>
-                <p className="p-2 text-sm md:text-base lg:text-lg text-white tracking-tighter lg:tracking-normal">
-                  Govt Senior Secondary School, Pathankot,Punjab
-                </p>
-              </div>
-              <div className="bg-green-500 md:w-[30%] h-[75%]" id="img">
-                
-              </div> */}
             </div>
           </div>
         </ParallaxLayer>
+        
         <ParallaxLayer offset={3} speed={4}>
-          <img src={ROAD} className="w-screen absolute h-screen z-0 " alt="" />
-        </ParallaxLayer>
-        <ParallaxLayer offset={3} speed={-4}>
-          <div className="h-screen w-screen flex justify-center items-center text-center">
-            <div className=" w-[95%] md:w-[50%] h-[70%] bg-slate-200 ">
-              <form className="bg-white w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <label className="block text-gray-700 text-2xl font-bold mb-2">
+          <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
+            <div className=" w-[90%] md:w-[45%]">
+              <form className="bg-background w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4">
+                <label className="block text-white text-2xl font-bold mb-2">
                   Let's Talk on this..
                 </label>
                 <div className="w-[75%] mb-4">
                   <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:scale-105 delay-75 transition-all"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:bg-slate-300 delay-75 transition-all"
                     id="username"
                     type="text"
                     placeholder="Name"
@@ -229,7 +191,7 @@ function Home() {
                 </div>
                 <div className="w-[75%] mb-6">
                   <input
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:scale-105 delay-75 transition-all"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all"
                     id="password"
                     type="tel"
                     placeholder="Mobile"
@@ -241,12 +203,11 @@ function Home() {
                     placeholder="Message"
                     name="messagetext"
                     id="message"
-                    className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:scale-105 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
+                    className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
                   ></textarea>
                 </div>
                 <button
-                  onClick={sendEmail}
-                  className="w-[50%] h-[40px] md:w-[30%] md:h-[42px] text-xl text-white bg-teal-600 hover:bg-teal-700"
+                  className="w-[50%] h-[40px] md:w-[30%] md:h-[42px] text-sm text-white bg-teal-600 hover:bg-teal-700"
                   type="submit"
                 >
                   {" "}
@@ -255,7 +216,11 @@ function Home() {
               </form>
             </div>
           </div>
+          <Modal props={<div className=" w-[100%] h-full">
+            <img src={RESUME} className="w-full" alt="" />
+            </div>}/>
         </ParallaxLayer>
+
       </Parallax>
     </>
   );

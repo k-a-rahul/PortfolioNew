@@ -15,10 +15,8 @@ const Navbar = ({ changeTheme }) => {
           Rahul's PortFolio
         </NavLink>
         <Link
-        className=" invisible sm:visible"
-          to={
-            "https://1drv.ms/w/c/650e2b831a2c7771/EeVpv9wlNGJEh4Vj3ggxjgoBQYiGoS3YO-MgmQYEovmDEA?e=qeefHU"
-          }
+        className="visible"
+          to={''}
           target="_blank"
         >
           Download Resume
