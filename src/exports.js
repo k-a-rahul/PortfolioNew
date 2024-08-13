@@ -4,14 +4,14 @@ import JS from '../src/LOGOs/JS.png'
 import REACT from '../src/LOGOs/React.png'
 import REDUX from '../src/LOGOs/Redux.png'
 import TAILWIND from '../src/LOGOs/Tailwind.png'
-import Profile from '../src/Assets/Profile1.png'
+import Profile from '../src/Assets/Profile22.png'
 import Satellite from '../src/Assets/Satellite.jpg'
 import MAN from '../src/Assets/Man.jpg'
 import HELLOWRITER from '../src/Assets/HelloWriter.json'
 import SCROLL from '../src/Assets/ScrollDownAnimation.json'
 import CLOUDS  from '../src/Assets/Clouds.png.png'
 import SCHOOL  from '../src/Assets/School.jpg'
-import BLUESKY  from '../src/Assets/Bluesky.jpg'
+import BLACKSKY  from '../src/Assets/BlackSky.jpg'
 import SKY  from '../src/Assets/Sky.jpg'
 import MOUNTAIN  from '../src/Assets/Mountain.png'
 import STARS  from '../src/Assets/stars.png'
@@ -70,7 +70,7 @@ export {MAN};
 export {HELLOWRITER};
 export {SCROLL};
 export {SCHOOL};
-export {BLUESKY};
+export {BLACKSKY};
 export {MOUNTAIN};
 export {STARS};
 export {SKY};

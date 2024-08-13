@@ -3,40 +3,48 @@ import { Typewriter } from "react-simple-typewriter";
 import Lottie from "lottie-react";
 import emailjs from "@emailjs/browser";
 import {
-  BLUESKY,
+  BLACKSKY,
   CLOUDS,
-  HELLOWRITER,
-  MAN,
+  defaultOptions,
   MOUNTAIN,
   MOUNTAIN2,
-  RESUME,
+  Profile,
   SCROLL,
   technicalskills,
+  TODO,
 } from "../exports";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 import Navbar from "./Navbar";
 import { publicKey, serviceid, templateid } from "../const";
-import { Slider } from "../Components/Slider";
-import Modal from "../Components/Modal";
-import { useRef } from "react";
+import { useState } from "react";
+import { Tilt } from "react-tilt";
+import Card from "../Components/Card";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<Projects/>";
 const skills = "<Skills/>";
 
 function Home() {
+  const [userdata, setUserdata] = useState({});
 
-  const modalref = useRef() 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    
+  };
+  const [name, setName] = useState();
+  const [mobile, setMobile] = useState();
+  const [message, setMessage] = useState();
+  
   return (
     <>
       <Parallax pages={4}>
         <ParallaxLayer offset={0} speed={1.5}>
-          <div className="h-[1150vh] w-screen visible  bg-gray-300"> </div>
-          {/* <img
-            src={BLUESKY}
+          <div className="absolute top-0 left-0"> </div>
+          <img
+            src={BLACKSKY}
             alt="img"
             className="md:bg-cover bg-no-repeat object-cover absolute top-0 left-0 invisible md:visible md:h-[1150vh] w-screen"
-          /> */}
+          />
         </ParallaxLayer>
         <ParallaxLayer offset={0} speed={1.5}>
           <img
@@ -61,17 +69,19 @@ function Home() {
         <ParallaxLayer offset={0} speed={0.7}>
           <Navbar />
           <div
-            className={`w-screen h-screen text-center flex flex-col justify-center -mt-28 items-center sm:mt-0 sm:p-4 md:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
+            className={`w-screen h-screen text-center flex flex-col justify-center gap-20 -mt-10 items-center sm:mt-0 sm:p-4 lg:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
           >
             <div
               id="one"
-              className="w-[80%] md:w-[40%] lg:w-[40%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
+              className="w-[60%] md:w-[30%] lg:w-[25%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
             >
-              <Lottie
-                loop={false}
-                animationData={HELLOWRITER}
-                className="w-[100%] lg:w-[100%]"
-              />
+              <Tilt options={defaultOptions}>
+                <img
+                  src={Profile}
+                  className="w-full lg:w-full rounded-xl transition-transform hover:scale-105"
+                  alt=""
+                />
+              </Tilt>
             </div>
             <div
               id="two"
@@ -113,10 +123,7 @@ function Home() {
               id="scrollAnime"
               className="invisible lg:visible absolute bottom-0"
             >
-              <Lottie
-                animationData={SCROLL}
-                loop
-              />
+              <Lottie animationData={SCROLL} loop />
             </div>
             <div className=" invisible md:visible absolute -bottom-1/2">
               <p className="text-2xl md:text-6xl font-bold font-mono text-lighttext">
@@ -129,7 +136,7 @@ function Home() {
         <ParallaxLayer offset={1} speed={0.65}>
           <div className="w-screen h-screen  md:overflow-hidden">
             <div
-              className={`mt-8 md:mt-6 w-screen h-screen flex flex-col justify-start items-center gap-6 md:flex-row md:justify-center md:items-center md:flex-wrap md:gap-4`}
+              className={`mt-0 md:mt-6 w-screen h-screen flex flex-col justify-start items-center gap-6 md:flex-row md:justify-center md:items-center md:flex-wrap md:gap-4`}
             >
               {technicalskills.map((Card) => {
                 return (
@@ -159,7 +166,7 @@ function Home() {
         </ParallaxLayer>
         {/* right Moveable divs started here */}
         <ParallaxLayer offset={2} speed={0.5}>
-          <div className="w-screen  h-screen flex justify-center items-center text-center">
+          <div className="mt-[50%] md:mt-0 overflow-hidden w-screen h-screen flex justify-center items-center text-center">
             <div className="invisible md:visible absolute top-[20%] md:-top-[20%] text-center flex justify-center">
               <p className="text-2xl text-center md:text-6xl font-semibold font-mono text-lighttext">
                 {projects}
@@ -167,22 +174,40 @@ function Home() {
             </div>
             <div
               id="mainDiv"
-              className="w-screen object-cover flex flex-col justify-center items-center md:flex-row md:justify-center md:items-center "
+              className="w-full object-cover grid grid-cols-1 md:grid-cols-2 gap-4 p-1 justify-items-center items-center overflow-hidden"
             >
-              <Slider />
+              <Card
+                img={TODO}
+                text={"Todo App"}
+                description={`A Modular todos managing web App build using context api,
+                  designed using tailwind CSS. A user can add, update, delete
+                  and mark as done a Todo Task.`}
+              />
+
+              <Card
+                img={TODO}
+                description={`A Modular todos managing web App build using context api,
+                  designed using tailwind CSS. A user can add, update, delete
+                  and mark as done a Todo Task.`}
+              />
             </div>
           </div>
         </ParallaxLayer>
-        
+
         <ParallaxLayer offset={3} speed={4}>
           <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
             <div className=" w-[90%] md:w-[45%]">
-              <form className="bg-background w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-background w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
+              >
                 <label className="block text-white text-2xl font-bold mb-2">
-                  Let's Talk on this..
+                  Let's have a Talk on this..
                 </label>
                 <div className="w-[75%] mb-4">
                   <input
+                    
+                    name="name"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:bg-slate-300 delay-75 transition-all"
                     id="username"
                     type="text"
@@ -191,6 +216,8 @@ function Home() {
                 </div>
                 <div className="w-[75%] mb-6">
                   <input
+                    
+                    name="mobile"
                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all"
                     id="password"
                     type="tel"
@@ -199,9 +226,11 @@ function Home() {
                 </div>
                 <div className="w-[90%] h-[150px] mb-6">
                   <textarea
-                    required={true}
+                    
+                    inputMode="text"
+                    // required={true}
                     placeholder="Message"
-                    name="messagetext"
+                    name="message"
                     id="message"
                     className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
                   ></textarea>
@@ -216,11 +245,7 @@ function Home() {
               </form>
             </div>
           </div>
-          <Modal props={<div className=" w-[100%] h-full">
-            <img src={RESUME} className="w-full" alt="" />
-            </div>}/>
         </ParallaxLayer>
-
       </Parallax>
     </>
   );

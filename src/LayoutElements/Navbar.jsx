@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Link, NavLink } from "react-router-dom";
-const Navbar = ({ changeTheme }) => {
+const Navbar = () => {
   return (
     <>
       <div className="sm:bg-transparent w-screen overflow-hidden flex md:bg-transparent text-white justify-start sm:justify-start gap-4 lg:gap-16 items-center sm:ml-4 ">
@@ -14,31 +14,8 @@ const Navbar = ({ changeTheme }) => {
         >
           Rahul's PortFolio
         </NavLink>
-        <Link
-        className="visible"
-          to={''}
-          target="_blank"
-        >
-          Download Resume
-        </Link>
-
-        {/* <NavLink
-          className={({ isActive }) =>
-            `sm:text-[32px] text-xl hover:text-lighttext delay-75 transition-all ${
-              isActive ? "text-lighttext" : ""
-            }`
-          }
-          to="/contact"
-        >
-          Contact
-        </NavLink> */}
-        {/* <button className="dark:text-white" onClick={changeTheme}>
-          <FaSun
-            className="sm:text-2xl hover:scale-125 transition-transform delay-75"
-            data-twe-toggle="tooltip"
-            title="Switch Theme"
-          />
-        </button> */}
+        <Link className="visible"
+        target="_top">Resume</Link>
       </div>
     </>
   );
