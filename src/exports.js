@@ -1,27 +1,26 @@
-import HTML from '../src/LOGOs/HTML.png'
-import CSS from '../src/LOGOs/CSS.png'
-import JS from '../src/LOGOs/JS.png'
-import REACT from '../src/LOGOs/React.png'
-import REDUX from '../src/LOGOs/Redux.png'
-import TAILWIND from '../src/LOGOs/Tailwind.png'
-import Profile from '../src/Assets/Profile22.png'
-import Satellite from '../src/Assets/Satellite.jpg'
-import MAN from '../src/Assets/Man.jpg'
-import HELLOWRITER from '../src/Assets/HelloWriter.json'
-import SCROLL from '../src/Assets/ScrollDownAnimation.json'
-import CLOUDS  from '../src/Assets/Clouds.png.png'
-import SCHOOL  from '../src/Assets/School.jpg'
-import BLACKSKY  from '../src/Assets/BlackSky.jpg'
-import SKY  from '../src/Assets/Sky.jpg'
-import MOUNTAIN  from '../src/Assets/Mountain.png'
-import STARS  from '../src/Assets/stars.png'
-import MYPIC  from '../src/Assets/MyPicAlter2.png'
-import MOUNTAIN2  from '../src/Assets/Mountain2.png'
-import ROAD  from '../src/Assets/Road2.png'
-import TODO  from '../src/Assets/TodoImage.jpg'
-import RESUME  from '../src/Assets/Resume.jpg'
-
-
+import HTML from "../src/LOGOs/HTML.png";
+import CSS from "../src/LOGOs/CSS.png";
+import JS from "../src/LOGOs/JS.png";
+import REACT from "../src/LOGOs/React.png";
+import REDUX from "../src/LOGOs/Redux.png";
+import TAILWIND from "../src/LOGOs/Tailwind.png";
+import Profile from "../src/Assets/Profile22.png";
+import Satellite from "../src/Assets/Satellite.jpg";
+import MAN from "../src/Assets/Man.jpg";
+import HELLOWRITER from "../src/Assets/HelloWriter.json";
+import SCROLL from "../src/Assets/ScrollDownAnimation.json";
+import CLOUDS from "../src/Assets/Clouds.png.png";
+import SCHOOL from "../src/Assets/School.jpg";
+import BLACKSKY from "../src/Assets/BlackSky.jpg";
+import SKY from "../src/Assets/Sky.jpg";
+import MOUNTAIN from "../src/Assets/Mountain.png";
+import STARS from "../src/Assets/stars.png";
+import MYPIC from "../src/Assets/MyPicAlter2.png";
+import MOUNTAIN2 from "../src/Assets/Mountain2.png";
+import ROAD from "../src/Assets/Road2.png";
+import TODO from "../src/Assets/TodoImage.jpg";
+import RESUME from "../src/Assets/Resume.jpg";
+import HEXA from "../src/Assets/HexaBg.jpg";
 
 export const technicalskills = [
   {
@@ -62,36 +61,37 @@ export const technicalskills = [
   },
 ];
 
+export { HTML, CSS, JS, REACT, REDUX, TAILWIND };
+export { Profile };
+export { Satellite };
+export { MAN };
+export { HELLOWRITER };
+export { SCROLL };
+export { SCHOOL };
+export { BLACKSKY };
+export { MOUNTAIN };
+export { STARS };
+export { SKY };
+export { CLOUDS };
+export { MYPIC };
+export { MOUNTAIN2 };
+export { ROAD };
+export { TODO };
+export { RESUME };
+export { HEXA };
 
-export {HTML, CSS,JS,REACT,REDUX,TAILWIND};
-export {Profile};
-export {Satellite};
-export {MAN};
-export {HELLOWRITER};
-export {SCROLL};
-export {SCHOOL};
-export {BLACKSKY};
-export {MOUNTAIN};
-export {STARS};
-export {SKY};
-export {CLOUDS};
-export {MYPIC};
-export {MOUNTAIN2};
-export {ROAD};
-export {TODO};
-export {RESUME};
-
-
-
-
+export const isInValidData = (data) => {
+  return data !== null && data !== undefined && data !== "";
+};
+export const publicKey = 'service_x7wpv5i'
 export const defaultOptions = {
-    reverse: false, // reverse the tilt direction
-    max: 25, // max tilt rotation (degrees)
-    perspective: 2000, // Transform perspective, the lower the more extreme the tilt gets.
-    scale: 1, // 2 = 200%, 1.5 = 150%, etc..
-    speed: 1, // Speed of the enter/exit transition
-    transition: true, // Set a transition on enter/exit.
-    easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
-    axis: null, // What axis should be disabled. Can be X or Y.
-    reset: true, // If the tilt effect has to be reset on exit.
-  };
+  reverse: false, // reverse the tilt direction
+  max: 25, // max tilt rotation (degrees)
+  perspective: 2000, // Transform perspective, the lower the more extreme the tilt gets.
+  scale: 1, // 2 = 200%, 1.5 = 150%, etc..
+  speed: 1, // Speed of the enter/exit transition
+  transition: true, // Set a transition on enter/exit.
+  easing: "cubic-bezier(.03,.98,.52,.99)", // Easing on enter/exit.
+  axis: null, // What axis should be disabled. Can be X or Y.
+  reset: true, // If the tilt effect has to be reset on exit.
+};

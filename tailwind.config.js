@@ -13,6 +13,9 @@ export default {
         background: "#333333", // dark gray
         heading: "#2ecc71",
         button: "#3498db",
+        warn:'FF0800',
+        success:'03C03C',
+        info:'FF9966'
       },
       animation: {
         "bounce-short": "bounce 20s linear infinite ",
