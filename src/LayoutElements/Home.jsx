@@ -83,13 +83,14 @@ function Home() {
     } else {
       toastref.current.showToast({
         message: "Recheck/Fill all the fields !",
+        bg:'bg-red-500'
       });
     }
   };
 
   return (
     <>
-      <nav className="fixed top-0 z-10 w-screen flex justify-center items-center text-center text-white">
+      <nav className="fixed top-0 z-10 w-screen flex justify-start items-center text-center text-lighttext text-2xl mx-1">
         <button>RESUME</button>
       </nav>
       <Parallax pages={4}>
