@@ -20,6 +20,7 @@ import { useEffect, useRef, useState } from "react";
 import { Tilt } from "react-tilt";
 import Card from "../Components/Card";
 import { Toaster } from "../Components/Toaster";
+import Modal from "../Components/Modal";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<Projects/>";
@@ -29,6 +30,7 @@ const templateId = "template_veov5tc";
 const publicKey = "Iq7kRUHjE5bv9OZ3v";
 
 function Home() {
+  const [show,setShow] = useState(false)
   const form = useRef();
   const toastref = useRef();
   const [userdata, setUserdata] = useState({
@@ -44,7 +46,6 @@ function Home() {
       [name]: value,
     }));
   };
-  // isinvaliddata is a function to check data for null || undefined || ""
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -65,18 +66,19 @@ function Home() {
         })
         .then(
           (res) => {
-            if (res.status == 200) {
+            alert('here')
+            if (res.status === 200) {
               toastref.current.showToast({
-                message: `Hi ${userdata.name},Thanks For ur interest.`,
+                message: `Thanks ${userdata.name},Will Contact You Shortly.`,
               });
             } else
               toastref.current.showToast({
-                message: `Somewhing Gone Wrong !! :-(`,
+                message: `Somewhing Gone Wrong ! Try Again`,
                 bg: "bg-red-600",
               });
           },
           (error) => {
-            console.log(error);
+            console.error(error);
           }
         );
       // toastref.current.showToast({ message: "DONE",bg:'bg-green-300' });
@@ -87,11 +89,14 @@ function Home() {
       });
     }
   };
+  const hide = ()=> setShow(false)
 
   return (
     <>
-      <nav className="fixed top-0 z-10 w-screen flex justify-start items-center text-center text-lighttext text-2xl mx-1">
-        <button>RESUME</button>
+      <Modal  show={show} hide={hide} child={<img className="h-full" src={RESUME}/>}/>
+      <nav className="absolute z-10 w-full flex justify-start items-center text-center ">
+        <button className="mx-2 text-lighttext text-xl md:text-2xl font-semibold group" onMouseEnter={()=>""} onClick={()=>setShow(true)}>Get Resume Here!</button>
+        <span className="group-hover:visible invisible bg-red-400 absolute h-2 w-12"></span>
       </nav>
       <Parallax pages={4}>
         <ParallaxLayer offset={0} speed={1.5}>
@@ -117,7 +122,7 @@ function Home() {
         {/* Main div hello and intro here */}
         <ParallaxLayer offset={0} speed={0.7}>
           <div
-            className={`w-screen h-screen text-center flex flex-col justify-center gap-20 -mt-10 items-center sm:mt-0 sm:p-4 lg:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
+            className={`w-screen h-screen text-center flex flex-col justify-center gap-20 -mt-0 items-center sm:mt-0 sm:p-4 lg:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
           >
             <div
               id="one"
@@ -244,8 +249,8 @@ function Home() {
         {/* <ParallaxLayer offset={3} speed={-4}>
           <img src={HEXA} className="z-0 w-screen h-screen" alt="" />
         </ParallaxLayer> */}
-        <ParallaxLayer offset={3} speed={4}>
-          <Toaster ref={toastref} />
+        <ParallaxLayer offset={3} speed={.85}>
+          <Toaster ref={toastref}  />
 
           <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
             <div className=" w-[90%] md:w-[45%]">

@@ -7,36 +7,42 @@ import React, {
 import { IoCloseSharp } from "react-icons/io5";
 
 export const Toaster = forwardRef((props, ref) => {
-  const [display, setDisplay] = useState("invisible");
+  const [display, setDisplay] = useState(false);
   const [message, setMessage] = useState("");
   const [bg, setBg] = useState("");
   useImperativeHandle(
     ref,
     () => ({
       showToast: ({ message, bg }) => {
-        setDisplay("visible");
+        setDisplay(true);
         setBg(bg ? bg : "bg-green-500");
-        setMessage(message ? message : "This is Default toast as No text given!");
+        setMessage(
+          message ? message : "This is Default toast as No text given!"
+        );
       },
     }),
     []
   );
   useEffect(() => {
     setTimeout(() => {
-      setDisplay("invisible");
-    }, 20000);
+      setDisplay(false);
+    }, 5000);
   }, [display]);
   return (
-    <div
-      className={`w-screen flex justify-center items-center ${display} absolute top-4 z-10 left-0`}
-    >
-      <div className={`${bg} p-2 rounded-xl flex justify-center items-center text-center`}>
-        <p className="text-sm text-white font-mono">{message}</p>
-        <IoCloseSharp
-          className="text-white text-xl cursor-pointer ml-4"
-          onClick={() => setDisplay("invisible")}
-        />
+    display && (
+      <div
+        className={`w-screen flex justify-center items-center absolute top-8 z-30`}
+      >
+        <div
+          className={`${bg} p-1 rounded-md flex justify-center items-center text-center`}
+        >
+          <p className="text-sm md:text-lg text-white mx-1">{message}</p>
+          <IoCloseSharp
+            className="text-white text-4xl p-1 cursor-pointer mx-1"
+            onClick={() => setDisplay(false)}
+          />
+        </div>
       </div>
-    </div>
+    )
   );
 });
