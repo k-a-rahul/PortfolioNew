@@ -28,7 +28,7 @@ function Modal({ show, child, hide }) {
             <div
             onClick={() => setZoom(1.2)}
             onDoubleClick={() => setZoom(1)}
-            style={{scale:`${zoom}`}} className="w-[40%] transition-all delay-75 ">{child}</div>
+            style={{scale:`${zoom}`}} className="w-full md:w-[40%] transition-all delay-75 ">{child}</div>
           </div>
         </div>
       )}
