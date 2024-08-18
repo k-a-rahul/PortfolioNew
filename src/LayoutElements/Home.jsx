@@ -66,7 +66,6 @@ function Home() {
         })
         .then(
           (res) => {
-            alert('here')
             if (res.status === 200) {
               toastref.current.showToast({
                 message: `Thanks ${userdata.name},Will Contact You Shortly.`,
