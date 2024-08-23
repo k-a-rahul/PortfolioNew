@@ -20,6 +20,7 @@ import MOUNTAIN2 from "../src/Assets/Mountain2.png";
 import ROAD from "../src/Assets/Road2.png";
 import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
+import RESUMEPDF from "../src/Assets/Resume.pdf";
 import HEXA from "../src/Assets/HexaBg.jpg";
 
 export const technicalskills = [
@@ -78,9 +79,10 @@ export { MOUNTAIN2 };
 export { ROAD };
 export { TODO };
 export { RESUME };
+export { RESUMEPDF };
 export { HEXA };
 
-export const isInValidData = (data) => {
+export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";
 };
 export const publicKey = 'service_x7wpv5i'

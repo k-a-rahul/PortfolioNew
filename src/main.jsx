@@ -7,7 +7,7 @@ import Home from "../src/LayoutElements/Home.jsx";
 
 const Routes = createBrowserRouter([
   {
-    path: "",
+    path: "/",
     element: <App />,
     children: [
       {
