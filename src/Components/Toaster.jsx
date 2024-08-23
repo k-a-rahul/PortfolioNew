@@ -23,11 +23,12 @@ export const Toaster = forwardRef((props, ref) => {
     }),
     []
   );
-  useEffect(() => {
-    setTimeout(() => {
-      setDisplay(false);
-    }, 5000);
-  }, [display]);
+
+  display === true ? setTimeout(() => {
+        setDisplay(false);}, 5000)
+    : null;
+
+
   return (
     display && (
       <div
