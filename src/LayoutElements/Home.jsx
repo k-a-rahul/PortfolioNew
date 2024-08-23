@@ -1,13 +1,9 @@
 import { Typewriter } from "react-simple-typewriter";
 import Lottie from "lottie-react";
-import { FaArrowRight } from "react-icons/fa";
 
-
-import emailjs, { send } from "@emailjs/browser";
 import {
   BLACKSKY,
   defaultOptions,
-  isValidData,
   MOUNTAIN,
   MOUNTAIN2,
   Profile,
@@ -18,80 +14,18 @@ import {
 } from "../exports";
 import { Parallax, ParallaxLayer } from "@react-spring/parallax";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Tilt } from "react-tilt";
 import Card from "../Components/Card";
-import { Toaster } from "../Components/Toaster";
 import Modal from "../Components/Modal";
+import Form from "../Components/Form";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<Projects/>";
 const skills = "<Skills/>";
-const serviceId = "service_x7wpv5i";
-const templateId = "template_veov5tc";
-const publicKey = "Iq7kRUHjE5bv9OZ3v";
-const warn = "bg-red-500";
-const success = "bg-green-500";
-
 
 function Home() {
   const [show, setShow] = useState(false);
-  const form = useRef();
-  const toastref = useRef();
-  const [userdata, setUserdata] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setUserdata((userdata) => ({
-      ...userdata,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const { name, email, message } = userdata;
-
-    const notify = ({ message, bg }) => toastref.current.showToast({ message: `${message}`, bg: `${bg}` });
-
-    if (!isValidData(name) || !isValidData(email) || !isValidData(message)) {
-      notify({ message: "All Fields are Required", bg: warn });
-    } else if (name.length < 4 || name.length > 20) {
-      notify({ message: "Enter valid Name", bg: warn });
-    } else if (!email.endsWith(".com") || !email.includes("@")) {
-      notify({ message: "Please Enter valid Mail id", bg: warn });
-    } else if (!isValidData(message)) {
-      notify({ message: "Enter a Valid message to send!", bg: warn });
-    } else if (message.length < 20 || message.length > 500) {
-      notify({
-        message: "Minimum 20 words and Max 500 Words are allowed",
-        bg: warn,
-      });
-    } else {
-      try {
-        const response = await emailjs.sendForm(
-          serviceId,
-          templateId,
-          form.current,
-          publicKey
-        );
-        if (response.status === 200) {
-          notify({
-            message: `Thanks ${name}, Will Contact You Shortly.`,
-            bg: success,
-          });
-        } else {
-          notify({ message: response.text, bg: warn });
-        }
-      } catch (error) {
-        notify({ message: error, bg: warn });
-      }
-    }
-  };
 
   const hide = () => setShow(false);
 
@@ -262,58 +196,8 @@ function Home() {
           <img src={HEXA} className="z-0 w-screen h-screen" alt="" />
         </ParallaxLayer> */}
         <ParallaxLayer offset={3} speed={0.85}>
-          <Toaster ref={toastref} />
-
           <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
-            <div className=" w-[90%] md:w-[45%]">
-              <form
-                ref={form}
-                onSubmit={handleSubmit}
-                className="bg-background w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
-              >
-                <label className="block text-white text-2xl font-bold mb-2">
-                  Let's have a Talk on this..
-                </label>
-                <div className="w-[75%] mb-4">
-                  <input
-                    onChange={handleChange}
-                    name="name"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:bg-slate-300 delay-75 transition-all"
-                    id="name"
-                    type="text"
-                    placeholder="Name"
-                  />
-                </div>
-                <div className="w-[75%] mb-6">
-                  <input
-                    onChange={handleChange}
-                    name="email"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all"
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                  />
-                </div>
-                <div className="w-[90%] h-[150px] mb-6">
-                  <textarea
-                    onChange={handleChange}
-                    inputMode="text"
-                    // required={true}
-                    placeholder="Message"
-                    name="message"
-                    id="message"
-                    className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
-                  ></textarea>
-                </div>
-                <button
-                  className=" overflow-hidden group w-[50%] h-[40px] md:w-[30%] md:h-[42px] rounded-md text-sm text-white bg-teal-600 hover:bg-teal-700 flex justify-center items-center gap-1 text-center"
-                  type="submit"
-                >
-                  Send Message
-                  <FaArrowRight className="relative right-0 group-hover:translate-x-4 transition-all"/>
-                </button>
-              </form>
-            </div>
+            <Form />
           </div>
         </ParallaxLayer>
       </Parallax>
