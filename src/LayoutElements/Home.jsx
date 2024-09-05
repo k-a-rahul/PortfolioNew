@@ -10,7 +10,6 @@ import {
   MOUNTAIN,
   MOUNTAIN2,
   PIC,
-  Profile,
   RESUME,
   SCROLL,
   technicalskills,
