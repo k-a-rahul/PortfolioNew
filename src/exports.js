@@ -49,16 +49,10 @@ export const technicalskills = [
     text: "Worked with react hooks having depth knowledge about JSX, Dynamic Data embedding, State management.",
   },
   {
-    name: "REDUX",
-    value: "70%",
-    logo: REDUX,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
-  },
-  {
     name: "TAILWIND CSS",
     value: "80%",
     logo: TAILWIND,
-    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.",
+    text: "Worked with tailwind css having in depth knowledge about layout techniques and Responssveness accross various devices.",
   },
 ];
 
