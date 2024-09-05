@@ -1,27 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { IoCloudDownloadOutline } from "react-icons/io5";
 
-import { IoCloseSharp } from "react-icons/io5";
-import { RESUME, RESUMEPDF } from "../exports";
 
-function Modal({ show, child, hide }) {
-
+function Modal({ show, child, hide, w, h }) {
   return (
     <>
       {show && (
         <div
-          className={`backdrop-brightness-[.3] absolute w-full h-full z-50 flex justify-center items-center text-center overflow-y-scroll`}
+          className={`backdrop-blur-sm absolute top-0 w-full h-full z-50 flex justify-center items-center text-center overflow-y-scroll`}
         >
           <div
-         
             id="movable"
-            className={`overflow-hidden relative w-[95%] md:w-auto md:h-[95%] flex justify-center items-center text-center`}
+            className={`bg-background rounded-2xl overflow-hidden relative w-full md:w-[${w ? w : 60}%] md:h-[${h ? h : 95}%] flex justify-center items-center text-center`}
           >
-            {child}
-            <div className="absolute w-full h-full p-1 flex justify-between items-start delay-75 overflow-hidden transition-all transform-cpu">
-            <a href='https://drive.google.com/file/d/1-wkxJR_Gado_AEzxWjELCr77vK5ZkFfj/view?usp=sharing' target="_blank" ><IoCloudDownloadOutline className="text-3xl text-black cursor-pointer"/></a>
-            <IoCloseSharp onClick={hide} className="text-3xl text-black cursor-pointer"/>
-            </div>
+            {child ? child : "No Child Content Passed"}
           </div>
         </div>
       )}

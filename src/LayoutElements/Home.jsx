@@ -10,7 +10,6 @@ import {
   MOUNTAIN,
   MOUNTAIN2,
   PIC,
-  RESUME,
   SCROLL,
   technicalskills,
   TODO,
@@ -22,6 +21,7 @@ import { Tilt } from "react-tilt";
 import Card from "../Components/Card";
 import Modal from "../Components/Modal";
 import Form from "../Components/Form";
+import Resume from "../Components/Resume";
 
 const Myname = "<Rahul-Kumar/>";
 const projects = "<Projects/>";
@@ -29,7 +29,6 @@ const skills = "<Skills/>";
 
 function Home() {
   const [show, setShow] = useState(false);
-
   const hide = () => setShow(false);
 
   return (
@@ -37,7 +36,7 @@ function Home() {
       <Modal
         show={show}
         hide={hide}
-        child={<img className="h-full" src={RESUME} />}
+        child={<Resume hide={hide}/>}
       />
       <nav className="absolute z-10 w-full flex justify-start items-center text-center ">
         <button
@@ -169,6 +168,7 @@ function Home() {
         </ParallaxLayer>
         {/* right Moveable divs started here */}
         <ParallaxLayer offset={2} speed={0.5}>
+          
           <div className="mt-[50%] md:mt-0 overflow-hidden w-screen h-screen flex justify-center items-center text-center">
             <div className="invisible md:visible absolute top-[20%] md:-top-[20%] text-center flex justify-center">
               <p className="text-2xl text-center md:text-6xl font-semibold font-mono text-lighttext">
@@ -179,7 +179,9 @@ function Home() {
               id="mainDiv"
               className="w-full object-cover grid grid-cols-1 md:grid-cols-2 gap-4 p-1 justify-items-center items-center overflow-hidden"
             >
+              
               <Card
+              onClick={()=>setOpen(true)}
                 img={TODO}
                 text={"Todo App"}
                 description={`A Modular todos managing web App build using context api,

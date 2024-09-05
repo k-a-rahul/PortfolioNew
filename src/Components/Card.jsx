@@ -1,10 +1,11 @@
 import React from "react";
 import { Tilt } from "react-tilt";
 
-function Card({ img, text, description }) {
+function Card({ img, text, description,onClick }) {
   return (
       <div
-        className="bg-background w-[80%] group rounded-xl p-2 text-white flex flex-col justify-center items-center overflow-hidden"
+      onClick={onClick}
+        className="bg-background cursor-pointer w-[80%] group rounded-xl p-2 text-white flex flex-col justify-center items-center overflow-hidden"
         id="card1"
       >
         <div className="w-[100%]">
