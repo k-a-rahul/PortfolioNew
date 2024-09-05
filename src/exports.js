@@ -5,23 +5,15 @@ import REACT from "../src/LOGOs/React.png";
 import REDUX from "../src/LOGOs/Redux.png";
 import TAILWIND from "../src/LOGOs/Tailwind.png";
 import Profile from "../src/Assets/Profile22.png";
-import Satellite from "../src/Assets/Satellite.jpg";
-import MAN from "../src/Assets/Man.jpg";
-import HELLOWRITER from "../src/Assets/HelloWriter.json";
 import SCROLL from "../src/Assets/ScrollDownAnimation.json";
-import CLOUDS from "../src/Assets/Clouds.png.png";
-import SCHOOL from "../src/Assets/School.jpg";
 import BLACKSKY from "../src/Assets/BlackSky.jpg";
-import SKY from "../src/Assets/Sky.jpg";
 import MOUNTAIN from "../src/Assets/Mountain.png";
 import STARS from "../src/Assets/stars.png";
-import MYPIC from "../src/Assets/MyPicAlter2.png";
 import MOUNTAIN2 from "../src/Assets/Mountain2.png";
 import ROAD from "../src/Assets/Road2.png";
 import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
-import HEXA from "../src/Assets/HexaBg.jpg";
 import PIC from "../src/Assets/PIC22.png";
 
 export const technicalskills = [
@@ -59,23 +51,16 @@ export const technicalskills = [
 
 export { HTML, CSS, JS, REACT, REDUX, TAILWIND };
 export { Profile };
-export { Satellite };
-export { MAN };
-export { HELLOWRITER };
 export { SCROLL };
-export { SCHOOL };
 export { BLACKSKY };
 export { MOUNTAIN };
 export { STARS };
-export { SKY };
 export { CLOUDS };
-export { MYPIC };
 export { MOUNTAIN2 };
 export { ROAD };
 export { TODO };
 export { RESUME };
 export { RESUMEPDF };
-export { HEXA };
 export { PIC };
 
 export const isValidData = (data) => {

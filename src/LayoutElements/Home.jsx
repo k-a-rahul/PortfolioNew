@@ -47,7 +47,7 @@ function Home() {
         >
           Get Resume Here!
         </button>
-      </nav>
+      </nav>  
       <Parallax pages={4}>
         <ParallaxLayer offset={0} speed={1.5}>
           <div className="absolute top-0 left-0"> </div>
@@ -81,7 +81,7 @@ function Home() {
               <Tilt options={defaultOptions}>
                 <img
                   src={PIC}
-                  className="border-4 border-lighttext w-full lg:w-full rounded-xl transition-transform hover:scale-105"
+                  className="w-full lg:w-full rounded-xl transition-transform hover:scale-105"
                   alt=""
                 />
               </Tilt>

@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Toaster } from "./Toaster";
-import { FaArrowRight } from "react-icons/fa";
-import emailjs, { send } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import { isValidData } from "../exports";
 
 const serviceId = "service_x7wpv5i";
@@ -32,8 +31,7 @@ function Form({label}) {
 
     const { name, email, message } = userdata;
 
-    const notify = ({ message, bg }) =>
-      toastref.current.showToast({ message: `${message}`, bg: `${bg}` });
+    const notify = ({ message, bg }) =>toastref.current.showToast({ message: `${message}`, bg: `${bg}` });
 
     if (!isValidData(name) || !isValidData(email) || !isValidData(message)) {
       notify({ message: "All Fields are Required", bg: warn });
@@ -116,13 +114,14 @@ function Form({label}) {
               className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
             ></textarea>
           </div>
-          <button
+          {
+            <button
             onClick={handleSubmit}
-            className=" overflow-hidden group w-[50%] h-[40px] md:w-[30%] md:h-[42px] rounded-md text-sm text-white bg-teal-600 hover:bg-teal-700 flex justify-center items-center gap-1 text-center"
-          >
-            Send Message
-            <FaArrowRight className="relative right-0 group-hover:translate-x-4 transition-all" />
+            className="overflow-hidden group w-[50%] h-[40px] md:w-[30%] md:h-[42px] rounded-md text-sm text-white bg-teal-600 hover:bg-teal-700 flex justify-center items-center gap-1 text-center"
+            >
+            {'Send Message'}
           </button>
+          }
         </form>
       </div>
     </>
