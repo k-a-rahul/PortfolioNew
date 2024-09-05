@@ -22,6 +22,7 @@ import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
 import HEXA from "../src/Assets/HexaBg.jpg";
+import PIC from "../src/Assets/PIC22.png";
 
 export const technicalskills = [
   {
@@ -75,6 +76,7 @@ export { TODO };
 export { RESUME };
 export { RESUMEPDF };
 export { HEXA };
+export { PIC };
 
 export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";

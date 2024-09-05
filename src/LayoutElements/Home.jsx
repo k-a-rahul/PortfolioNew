@@ -1,11 +1,15 @@
 import { Typewriter } from "react-simple-typewriter";
 import Lottie from "lottie-react";
+import { ImFacebook2 } from "react-icons/im";
+import { FaGithubSquare } from "react-icons/fa";
+import { FaWhatsappSquare } from "react-icons/fa";
 
 import {
   BLACKSKY,
   defaultOptions,
   MOUNTAIN,
   MOUNTAIN2,
+  PIC,
   Profile,
   RESUME,
   SCROLL,
@@ -72,12 +76,12 @@ function Home() {
           >
             <div
               id="one"
-              className="w-[60%] md:w-[30%] lg:w-[25%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
+              className="w-[60%] md:w-[30%] lg:w-[22%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
             >
               <Tilt options={defaultOptions}>
                 <img
-                  src={Profile}
-                  className="w-full lg:w-full rounded-xl transition-transform hover:scale-105"
+                  src={PIC}
+                  className="border-4 border-lighttext w-full lg:w-full rounded-xl transition-transform hover:scale-105"
                   alt=""
                 />
               </Tilt>
@@ -99,11 +103,12 @@ function Home() {
                       loop
                       cursor={true}
                       cursorBlinking
-                      cursorColor="orange"
+                      cursorColor="teal"
                       words={[
-                        "A Front-End developer",
+                        "A FrontEnd developer",
+                        "A Coder",
                         "A Gamer",
-                        "A Tech Enthusiast.",
+                        "A Techie",
                         "A Quick Learner",
                       ]}
                       typeSpeed={100}
@@ -111,7 +116,7 @@ function Home() {
                     />
                   </p>
                   <p className="p-2 text-sm md:text-base lg:text-lg text-white tracking-tighter lg:tracking-normal">
-                    With a keen eye for design and a strong technical skill set,
+                    Meet Rahul, A Tech Professional With a keen eye for design and a strong technical skill set,
                     I specialize in translating ideas into seamless, interactive
                     interfaces. On the way to build something incredible.
                   </p>
@@ -198,6 +203,11 @@ function Home() {
         <ParallaxLayer offset={3} speed={0.85}>
           <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
             <Form />
+            <div className="absolute bottom-10 flex justify-between items-center gap-10">
+            <a href="https://www.facebook.com/profile.php?id=61560864673430&mibextid=ZbWKwL" target="_blank"><ImFacebook2 className=" text-3xl text-white cursor-pointer"/></a>
+            <a href="https://github.com/k-a-rahul" target="_blank"><FaGithubSquare className=" text-4xl text-white cursor-pointer"/></a>
+           <a href="https://wa.me/7347506388" target="_blank"><FaWhatsappSquare className=" text-4xl text-white cursor-pointer" /></a>
+            </div>
           </div>
         </ParallaxLayer>
       </Parallax>

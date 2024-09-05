@@ -18,7 +18,7 @@ function Modal({ show, child, hide }) {
             className={`overflow-hidden relative w-[95%] md:w-auto md:h-[95%] flex justify-center items-center text-center`}
           >
             {child}
-            <div className="absolute w-full h-full flex justify-evenly items-start delay-75 overflow-hidden transition-all transform-cpu">
+            <div className="absolute w-full h-full p-1 flex justify-between items-start delay-75 overflow-hidden transition-all transform-cpu">
             <a href='https://drive.google.com/file/d/1-wkxJR_Gado_AEzxWjELCr77vK5ZkFfj/view?usp=sharing' target="_blank" ><IoCloudDownloadOutline className="text-3xl text-black cursor-pointer"/></a>
             <IoCloseSharp onClick={hide} className="text-3xl text-black cursor-pointer"/>
             </div>
