@@ -56,7 +56,7 @@ function Home() {
             className="md:bg-cover bg-no-repeat object-cover absolute top-0 left-0 h-[1150vh] w-screen"
           />
         </ParallaxLayer>
-        <ParallaxLayer offset={0} speed={-6}>
+        {/* <ParallaxLayer offset={0} speed={-6}>
           <img
             src={MOUNTAIN2}
             className="visible w-screen  z-10 md:invisible absolute bottom-0"
@@ -67,7 +67,7 @@ function Home() {
             alt="mountain"
             className="invisible md:visible w-screen h-screen z-10"
           />
-        </ParallaxLayer>
+        </ParallaxLayer> */}
         {/* Main div hello and intro here */}
         <ParallaxLayer offset={0} speed={0.7}>
           <div
