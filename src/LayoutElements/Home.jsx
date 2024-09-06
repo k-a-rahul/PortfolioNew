@@ -49,12 +49,12 @@ function Home() {
       </nav>  
       <Parallax pages={4}>
         <ParallaxLayer offset={0} speed={1.5}>
-          <div className="absolute top-0 left-0"> </div>
-          <img
+          <div className="absolute top-0 left-0 w-screen h-[1200vh] bg-black"> </div>
+          {/* <img
             src={BLACKSKY}
             alt="img"
             className="md:bg-cover bg-no-repeat object-cover absolute top-0 left-0 h-[1150vh] w-screen"
-          />
+          /> */}
         </ParallaxLayer>
         {/* <ParallaxLayer offset={0} speed={-6}>
           <img
