@@ -211,7 +211,7 @@ function Home() {
             <a href="https://github.com/k-a-rahul" target="_blank"><FaGithubSquare className=" text-4xl text-white cursor-pointer"/></a>
            <a href="https://wa.me/7347506388" target="_blank"><FaWhatsappSquare className=" text-4xl text-white cursor-pointer" /></a>
             </div>
-            <div className="absolute w-[20%] bottom-5 right-4">
+            <div className="absolute invisible md:visible -rotate-6 md:w-[25%] bottom-5 right-4">
               <img src={SIGN} alt="" />
             </div>
           </div>
