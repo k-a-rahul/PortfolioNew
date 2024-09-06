@@ -44,7 +44,7 @@ function Home() {
           className="mx-2 text-lighttext text-xl md:text-2xl font-semibold group"
           onClick={() => setShow(true)}
         >
-          Get Resume Here!
+          Get Resume
         </button>
       </nav>  
       <Parallax pages={4}>
