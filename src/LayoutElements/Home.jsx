@@ -11,6 +11,7 @@ import {
   MOUNTAIN2,
   PIC,
   SCROLL,
+  SIGN,
   technicalskills,
   TODO,
 } from "../exports";
@@ -127,8 +128,8 @@ function Home() {
             >
               <Lottie animationData={SCROLL} loop />
             </div>
-            <div className=" invisible md:visible absolute -bottom-1/2">
-              <p className="text-2xl md:text-6xl font-bold font-mono text-lighttext">
+            <div className=" visible md:visible absolute -bottom-1/2">
+              <p className="text-4xl md:text-6xl font-bold font-mono text-lighttext">
                 {skills}
               </p>
             </div>
@@ -170,8 +171,8 @@ function Home() {
         <ParallaxLayer offset={2} speed={0.5}>
           
           <div className="mt-[50%] md:mt-0 overflow-hidden w-screen h-screen flex justify-center items-center text-center">
-            <div className="invisible md:visible absolute top-[20%] md:-top-[20%] text-center flex justify-center">
-              <p className="text-2xl text-center md:text-6xl font-semibold font-mono text-lighttext">
+            <div className="visible md:visible absolute top-[20%] md:-top-[20%] text-center flex justify-center">
+              <p className="text-4xl text-center md:text-6xl font-bold font-mono text-lighttext">
                 {projects}
               </p>
             </div>
@@ -204,10 +205,14 @@ function Home() {
         <ParallaxLayer offset={3} speed={0.85}>
           <div className="h-screen w-screen flex justify-center lg:justify-center md:p-6 items-center text-center">
             <Form />
+
             <div className="absolute bottom-10 flex justify-between items-center gap-10">
             <a href="https://www.facebook.com/profile.php?id=61560864673430&mibextid=ZbWKwL" target="_blank"><ImFacebook2 className=" text-3xl text-white cursor-pointer"/></a>
             <a href="https://github.com/k-a-rahul" target="_blank"><FaGithubSquare className=" text-4xl text-white cursor-pointer"/></a>
            <a href="https://wa.me/7347506388" target="_blank"><FaWhatsappSquare className=" text-4xl text-white cursor-pointer" /></a>
+            </div>
+            <div className="absolute w-[20%] bottom-5 right-4">
+              <img src={SIGN} alt="" />
             </div>
           </div>
         </ParallaxLayer>
