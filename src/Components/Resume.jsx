@@ -1,8 +1,7 @@
 import React from "react";
 import { RESUME } from "../exports";
 import { IoCloseSharp, IoCloudDownloadOutline } from "react-icons/io5";
-import { AiOutlineZoomIn } from "react-icons/ai";
-import { AiOutlineZoomOut } from "react-icons/ai";
+
 
 
 function Resume({ hide }) {

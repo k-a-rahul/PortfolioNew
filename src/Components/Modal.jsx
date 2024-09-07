@@ -10,7 +10,7 @@ function Modal({ show, child, hide, w, h }) {
         >
           <div
             id="movable"
-            className={`bg-background rounded-2xl overflow-hidden relative w-full md:w-[${w ? w : 60}%] md:h-[${h ? h : 95}%] flex justify-center items-center text-center`}
+            className={`rounded-2xl overflow-hidden relative w-full md:w-[${w ? w : 60}%] md:h-[${h ? h : 95}%] flex justify-center items-center text-center`}
           >
             {child ? child : "No Child Content Passed"}
           </div>

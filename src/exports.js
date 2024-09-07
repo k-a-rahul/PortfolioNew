@@ -14,7 +14,7 @@ import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
 import PIC from "../src/Assets/PIC22.png";
-import SIGN from "../src/Assets/RahulSIGN.png";
+import SIGN from "../src/Assets/RahulSign1.png";
 
 export const technicalskills = [
   {
@@ -48,6 +48,38 @@ export const technicalskills = [
     text: "Worked with tailwind css having in depth knowledge about layout techniques and Responssveness accross various devices.",
   },
 ];
+export const professionalskills = [
+  {
+    name: "Communication",
+    value: "90%",
+    text: "",
+  },
+  {
+    name: "TeamWork",
+    value: "85%",
+    text: "",
+  },
+  {
+    name: "Analytical Skills",
+    value: "70%",
+    text: "",
+  },
+  {
+    name: "Problem Solving",
+    value: "70%",
+    text: "",
+  },
+  {
+    name: "Time Management",
+    value: "70%",
+    text: "",
+  },
+  {
+    name: "Fast learning",
+    value: "70%",
+    text: "",
+  },
+]
 
 export { HTML, CSS, JS, REACT, REDUX, TAILWIND };
 export { Profile };
