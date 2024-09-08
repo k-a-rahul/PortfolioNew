@@ -13,6 +13,7 @@ import ROAD from "../src/Assets/Road2.png";
 import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
+import RESUMEICON from "../src/Assets/Resumeicon.png";
 import PIC from "../src/Assets/PIC22.png";
 import SIGN from "../src/Assets/RahulSign1.png";
 
@@ -27,7 +28,7 @@ export const technicalskills = [
     name: "CSS",
     value: "85%",
     logo: CSS,
-    text: "Strong knowledge of Css, which includes responsibe layouts, Typography, Grid/Flex layouts.",
+    text: "Strong knowledge of Cascading style sheets, which includes responsibe layouts, Typography, Grid/Flex layouts and compatibility.",
   },
   {
     name: "JS",
@@ -93,6 +94,7 @@ export { RESUME };
 export { RESUMEPDF };
 export { PIC };
 export { SIGN };
+export { RESUMEICON};
 
 export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";

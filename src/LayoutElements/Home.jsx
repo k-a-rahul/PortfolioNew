@@ -4,7 +4,7 @@ import { ImFacebook2 } from "react-icons/im";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 
-import { defaultOptions, PIC, SCROLL, SIGN } from "../exports";
+import { defaultOptions, PIC, RESUMEICON, SCROLL, SIGN } from "../exports";
 
 import { Tilt } from "react-tilt";
 import Modal from "../Components/Modal";
@@ -24,7 +24,7 @@ function Home() {
       >
         <div
           id="one"
-          className="w-[75%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
+          className="w-[70%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
         >
           <Tilt options={defaultOptions}>
             <img
@@ -72,16 +72,16 @@ function Home() {
             </span>
           </div>
         </div>
-        <div className="absolute overflow-hidden invisible md:visible -rotate-6 md:w-[20%] bottom-5 right-5">
+        <div className="absolute overflow-hidden -rotate-6 w-36 md:w-[20%] bottom-0 right-0 md:bottom-5 md:right-5">
           <img src={SIGN} className="w-full" alt="" />
         </div>
-        <div id="resume" className="visible absolute bottom-8">
-          <button
-            className="mx-2 text-lighttext text-xl font-semibold group"
-            onClick={() => setShow(true)}
-          >
-            Get Resume
-          </button>
+        <div id="resume" className="absolute -left-1 top-1">
+          <button onClick={() => setShow(true)}>
+            <img
+            className="mx-2 w-8 hover:scale-105 transition-all"
+                  src={RESUMEICON}
+            />
+            </button>
         </div>
       </div>
     </>
