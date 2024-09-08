@@ -4,12 +4,6 @@ import JS from "../src/LOGOs/JS.png";
 import REACT from "../src/LOGOs/React.png";
 import REDUX from "../src/LOGOs/Redux.png";
 import TAILWIND from "../src/LOGOs/Tailwind.png";
-import Profile from "../src/Assets/Profile22.png";
-import SCROLL from "../src/Assets/ScrollDownAnimation.json";
-import BLACKSKY from "../src/Assets/BlackSky.jpg";
-import MOUNTAIN from "../src/Assets/Mountain.png";
-import MOUNTAIN2 from "../src/Assets/Mountain2.png";
-import ROAD from "../src/Assets/Road2.png";
 import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
@@ -83,12 +77,6 @@ export const professionalskills = [
 ]
 
 export { HTML, CSS, JS, REACT, REDUX, TAILWIND };
-export { Profile };
-export { SCROLL };
-export { BLACKSKY };
-export { MOUNTAIN };
-export { MOUNTAIN2 };
-export { ROAD };
 export { TODO };
 export { RESUME };
 export { RESUMEPDF };

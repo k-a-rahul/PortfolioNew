@@ -4,7 +4,7 @@ import { ImFacebook2 } from "react-icons/im";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaWhatsappSquare } from "react-icons/fa";
 
-import { defaultOptions, PIC, RESUMEICON, SCROLL, SIGN } from "../exports";
+import { defaultOptions, PIC, RESUMEICON, SIGN } from "../exports";
 
 import { Tilt } from "react-tilt";
 import Modal from "../Components/Modal";
@@ -29,7 +29,7 @@ function Home() {
           <Tilt options={defaultOptions}>
             <img
               src={PIC}
-              className="w-full lg:w-full "
+              className="w-full lg:w-full shadow-lg "
               alt="image"
             />
           </Tilt>
