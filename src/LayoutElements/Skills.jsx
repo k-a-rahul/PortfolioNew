@@ -1,54 +1,36 @@
-import React from 'react'
-import { professionalskills, technicalskills } from '../exports';
+import React from "react";
+import { professionalskills, technicalskills } from "../exports";
 
 function Skills() {
   return (
-    <div className="w-screen h-screen flex flex-col justify-center items-center gap-4">
-        
-        <div className='bg-slate-300 md:w-[95%] rounded-xl grid grid-cols-2 md:grid-cols-3 gap-1 p-2 place-items-center align-middle '>
-        {/* <p className=''>Technical Skills</p> */}
-        {technicalskills.map((Card) => {
-                return (
-                  <div
-                    key={Card.name}
-                    className="md:w-[75%] bg-background group rounded-xl cursor-default text-white flex flex-col justify-center text-center items-center hover:scale-105 p-2 delay-75 transition-all"
-                  >
-                    <img
-                      id="skillcard"
-                      src={Card.logo}
-                      alt="htmlLogo"
-                      className="relative top-0 md:relative md:top-0 w-6 md:w-[65px]"
-                    />
-                    <div>
-                      <p className="p-2 text-xs text-white tracking-tight ">
-                        {Card.text}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-        </div>
-        <div className='bg-slate-300 w-full md:w-[60%] rounded-xl grid grid-cols-2 md:grid-cols-3 gap-1 p-2 justify-center justify-items-center place-items-center items-center align-middle '>
-            {/* <p className=''>Professional Skills</p> */}
-        {professionalskills.map((Card) => {
-                return (
-                  <div
-                    key={Card.name}
-                    className="w-[100%] bg-background group rounded-xl cursor-default text-white flex flex-col justify-center text-center items-center hover:scale-105 p-2 delay-75 transition-all"
-                  ><p>
-
-                  </p>
-                    <div>
-                      <p className="p-2 text-xs text-white tracking-tight ">
-                        {Card.name}
-                      </p>
-                    </div>
-                  </div>
-                );
-              })}
-        </div>
-          </div>
-  )
+    <div className="w-screen h-screen overflow-hidden flex flex-col justify-center items-center">
+      <div className="absolute top-10 flex flex-wrap gap-3 ">
+        {
+          professionalskills.map((item)=>{
+            return (
+              <div key={item.name} className=" bg-slate-300 text-black p-1 rounded-lg ">
+                  <p className="text-xs md:text-base">{item.name}</p>
+              </div>
+            )
+          })
+        }
+      </div>
+      <div className="w-full gap-4 flex flex-col md:flex-row flex-wrap justify-center items-center">
+        {technicalskills.map((card) => {
+          return (
+            <div
+              key={card.name}
+              id="card"
+              className="bg-white transition-all group hover:bg-slate-300 rounded-xl text-center w-[75%] md:w-[20%] p-1 flex flex-col justify-center items-center"
+            >
+              <img src={card.logo} className="w-20 md:w-24 relative top-0 group-hover:relative group-hover:-top-2 group-hover:md:-top-4 transition-all" alt="img" />
+              <p className="text-xs md:text-sm tracking-tighter">{card.text}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 }
 
-export default Skills
+export default Skills;
