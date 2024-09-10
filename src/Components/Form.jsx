@@ -75,7 +75,7 @@ function Form({label}) {
       <div className="w-[95%] md:w-[55%] lg:w-[45%]">
         <form
           ref={form}
-          className="bg-background w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-lightergray w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
         >
           <label className="block text-white text-2xl font-bold mb-2">
             {label ? label:"Let's have a Talk on this.."}
