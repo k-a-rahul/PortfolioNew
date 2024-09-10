@@ -15,13 +15,28 @@ const Myname = "<Rahul-Kumar/>";
 
 function Home() {
   const [show, setShow] = useState(false);
+  const [tip,setTip ] = useState(false);
   const hide = () => setShow(false);
   return (
     <>
       <Modal show={show} hide={hide} child={<Resume hide={hide} />} />
+      
       <div
         className={`w-screen h-screen text-center flex flex-col justify-center items-center gap-10 sm:mt-0 sm:p-0 lg:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
       >
+        <div id="resume" className="absolute -left-1 top-1" onMouseEnter={()=>{setTip(true)}} onMouseLeave={()=>setTip(false)}>
+        {tip && <span className="text-base text-red-400 absolute top-0 left-12">Resume</span>}
+          <button onClick={() => setShow(true)}>
+            <img
+            className="mx-4 w-8 hover:scale-105 transition-all"
+                  src={RESUMEICON}
+            />
+            </button>
+        </div>
+        <div className="flex flex-col justify-center absolute top-10 w-40 text-black rounded-2xl bg-lightergray  ">
+        <div className="ml-3 absolute w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        Available Now !
+        </div>
         <div
           id="one"
           className="w-[70%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
@@ -29,7 +44,7 @@ function Home() {
           <Tilt options={defaultOptions}>
             <img
               src={PIC}
-              className="w-full lg:w-full shadow-lg "
+              className="w-full lg:w-full shadow-2xl "
               alt="image"
             />
           </Tilt>
@@ -72,17 +87,10 @@ function Home() {
             </span>
           </div>
         </div>
-        <div className="absolute overflow-hidden -rotate-6 w-36 md:w-[20%] bottom-0 right-0 md:bottom-5 md:right-5">
+        <div className="absolute overflow-hidden -rotate-12 w-44 md:w-[20%] bottom-4 right-6 md:bottom-10 md:right-10">
           <img src={SIGN} className="w-full" alt="" />
         </div>
-        <div id="resume" className="absolute -left-1 top-1">
-          <button onClick={() => setShow(true)}>
-            <img
-            className="mx-2 w-8 hover:scale-105 transition-all"
-                  src={RESUMEICON}
-            />
-            </button>
-        </div>
+        
       </div>
     </>
   );

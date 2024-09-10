@@ -19,12 +19,7 @@ function Projects() {
           and mark as done a Todo Task.`}
       />
 
-      <Card
-        img={TODO}
-        description={`A Modular todos managing web App build using context api,
-          designed using tailwind CSS. A user can add, update, delete
-          and mark as done a Todo Task.`}
-      />
+      <Card/>
     </div>
   </div>
   )

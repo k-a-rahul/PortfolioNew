@@ -4,12 +4,14 @@ import JS from "../src/LOGOs/JS.png";
 import REACT from "../src/LOGOs/React.png";
 import REDUX from "../src/LOGOs/Redux.png";
 import TAILWIND from "../src/LOGOs/Tailwind.png";
+import GIT from "../src/Assets/GITICON.png";
 import TODO from "../src/Assets/TodoImage.jpg";
 import RESUME from "../src/Assets/Resume.jpg";
 import RESUMEPDF from "../src/Assets/Resume.pdf";
 import RESUMEICON from "../src/Assets/Resumeicon.png";
 import PIC from "../src/Assets/PIC22.png";
 import SIGN from "../src/Assets/RahulSign1.png";
+import NOIMAGE from "../src/Assets/NOIMAGE.jpg";
 
 export const technicalskills = [
   {
@@ -41,6 +43,12 @@ export const technicalskills = [
     value: "80%",
     logo: TAILWIND,
     text: "Worked with tailwind css having in depth knowledge about layout techniques and Responssveness accross various devices.",
+  },
+  {
+    name: "GITHUB",
+    value: "80%",
+    logo: GIT,
+    text: "Hands-on experience of using github for managing projects in different branches, respositeries, pull/push, solving conflicts etc. ",
   },
 ];
 export const professionalskills = [
@@ -76,13 +84,14 @@ export const professionalskills = [
   },
 ]
 
-export { HTML, CSS, JS, REACT, REDUX, TAILWIND };
+export { HTML, CSS, JS, REACT, REDUX, TAILWIND,GIT };
 export { TODO };
 export { RESUME };
 export { RESUMEPDF };
 export { PIC };
 export { SIGN };
 export { RESUMEICON};
+export { NOIMAGE};
 
 export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";

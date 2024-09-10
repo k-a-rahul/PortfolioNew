@@ -10,6 +10,7 @@ export default {
         lighttext: "#329999",
         text: "#008080",
         lightgray: "#545454",
+        lightergray:'#cbd5e1',
         background: "#333333", // dark gray
         heading: "#2ecc71",
         button: "#3498db",
