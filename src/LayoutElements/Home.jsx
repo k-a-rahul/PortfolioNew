@@ -39,7 +39,7 @@ function Home() {
         </div>
         <div
           id="one"
-          className="sm:h-full sm:shadow-2xl sm:bg-slate-300 w-[60%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
+          className="sm:h-full sm:shadow-2xl sm:bg-slate-300 w-[60%] md:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
         >
             <img
               src={PIC}
@@ -49,17 +49,17 @@ function Home() {
         </div>
         <div
           id="two"
-          className="p-1 w-[90%] sm:bg-slate-300 md:w-[60%] lg:w-full flex flex-col justify-center items-center "
+          className="p-1 w-[90%] z-10 sm:shadow-lg sm:bg-slate-300 md:w-full flex flex-col justify-center items-center "
         >
           <div
             aria-label="aboutme"
             className="text-center w-[100%] md:w-[420px] lg:w-[580px] text-pretty p-5 lg:p-6"
           >
             <span>
-              <p className="text-2xl md:text-6xl font-bold font-mono text-lighttext">
+              <p className="text-2xl md:text-5xl font-bold font-mono text-lighttext">
                 {Myname}
               </p>
-              <p className="text-xl md:text-4xl font-mono font-semibold text-lighttext">
+              <p className="text-xl md:text-3xl font-mono font-semibold text-lighttext">
                 <Typewriter
                   loop
                   cursor={true}

@@ -72,7 +72,7 @@ function Form({label}) {
   return (
     <>
       <Toaster ref={toastref} />
-      <div className="w-[95%] md:w-[60%]">
+      <div className="w-[95%] md:w-[50%]">
         <form
           ref={form}
           className="bg-lightergray w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
@@ -85,7 +85,7 @@ function Form({label}) {
               onChange={handleChange}
               value={userdata.name}
               name="name"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:bg-slate-300 delay-75 transition-all"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:bg-slate-200 delay-75 transition-all"
               id="name"
               type="text"
               placeholder="Name"
@@ -96,7 +96,7 @@ function Form({label}) {
               onChange={handleChange}
               value={userdata.email}
               name="email"
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-200 delay-75 transition-all"
               id="email"
               type="email"
               placeholder="Email"
@@ -111,7 +111,7 @@ function Form({label}) {
               placeholder="Message"
               name="message"
               id="message"
-              className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-300 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
+              className="overflow-auto shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:bg-slate-200 delay-75 transition-all min-h-[100px] max-h-[150px] resize-y"
             ></textarea>
           </div>
           {
