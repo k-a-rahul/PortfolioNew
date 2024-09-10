@@ -22,7 +22,7 @@ function Home() {
       <Modal show={show} hide={hide} child={<Resume hide={hide} />} />
       
       <div
-        className={`w-screen h-screen text-center flex flex-col justify-center items-center gap-10 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
+        className={`w-screen h-screen text-center flex flex-col justify-center items-center gap-6 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
       >
         <div id="resume" className="absolute -left-1 top-1" onMouseEnter={()=>{setTip(true)}} onMouseLeave={()=>setTip(false)}>
         {tip && <span className="text-base text-red-400 absolute top-0 left-12">Resume</span>}
@@ -39,7 +39,7 @@ function Home() {
         </div>
         <div
           id="one"
-          className="sm:h-full shadow-2xl bg-slate-100 w-[70%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
+          className="sm:h-full sm:shadow-2xl sm:bg-slate-300 w-[60%] md:w-[30%] lg:w-[35%] flex justify-center items-center md:flex-row md:justify-evenly md:items-center "
         >
             <img
               src={PIC}
@@ -49,7 +49,7 @@ function Home() {
         </div>
         <div
           id="two"
-          className="p-1 rounded-xl w-[90%] md:w-[60%] lg:w-1/2 flex flex-col justify-center items-center "
+          className="p-1 w-[90%] sm:bg-slate-300 md:w-[60%] lg:w-full flex flex-col justify-center items-center "
         >
           <div
             aria-label="aboutme"

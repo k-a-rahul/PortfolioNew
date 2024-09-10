@@ -72,7 +72,7 @@ function Form({label}) {
   return (
     <>
       <Toaster ref={toastref} />
-      <div className="w-[95%] md:w-[55%] lg:w-[45%]">
+      <div className="w-[95%] md:w-[60%]">
         <form
           ref={form}
           className="bg-lightergray w-full h-full flex flex-col justify-start shadow-md rounded px-8 pt-6 pb-8 mb-4"
