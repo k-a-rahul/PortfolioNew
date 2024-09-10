@@ -21,7 +21,7 @@ function Skills() {
             <div
               key={card.name}
               id="card"
-              className="bg-slate-100 shadow-sm transition-all group hover:bg-lightergray hover:scale-110 rounded-xl w-full text-center p-1 flex flex-col justify-center items-center"
+              className="bg-slate-100 shadow-sm transition-all group hover:bg-lightergray rounded-xl w-full text-center p-1 flex flex-col justify-center items-center"
             >
               <img src={card.logo} className="w-20 md:w-24 relative top-0 group-hover:relative group-hover:-top-2 group-hover:md:-top-4 transition-all" alt="img" />
               <p className="text-xs md:text-sm tracking-tighter">{card.text}</p>
