@@ -24,15 +24,16 @@ export const Toaster = forwardRef((props, ref) => {
     []
   );
 
-  display === true ? setTimeout(() => {
-        setDisplay(false);}, 5000)
+  display === true
+    ? setTimeout(() => {
+        setDisplay(false);
+      }, 5000)
     : null;
-
 
   return (
     display && (
       <div
-        className={`w-screen flex justify-center items-center absolute top-8 z-30`}
+        className={`w-screen flex justify-center items-center absolute top-8 z-30 `}
       >
         <div
           className={`${bg} p-1 rounded-md flex justify-center items-center text-center`}

@@ -7,7 +7,7 @@ function Card({ img, text, description,onClick }) {
   return (
       <div
       onClick={onClick}
-        className="bg-slate-100 transition-all group hover:bg-slate-300 w-[80%] group rounded-xl p-2 text-black flex flex-col justify-center items-center overflow-hidden"
+        className="bg-slate-100 transition-all group hover:bg-slate-300 hover:-translate-y-1 w-[80%] group rounded-xl p-2 text-black flex flex-col justify-center items-center overflow-hidden"
         id="card1"
       >
         <div className="w-[220px] aspect-square">

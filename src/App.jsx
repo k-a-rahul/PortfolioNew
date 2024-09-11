@@ -5,7 +5,6 @@ function App() {
   return (
     <>
     <div className="overflow-hidden w-screen h-screen">
-
     <Navbar/>
     <Outlet />;
     </div>
