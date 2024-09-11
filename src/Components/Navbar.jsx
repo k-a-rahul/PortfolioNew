@@ -12,8 +12,8 @@ function Navbar() {
               to="/"
               className={({ isActive }) =>
                 isActive
-                  ? "lg:text-lg text-xs text-lighttext bg-slate-300 p-1 rounded-md"
-                  : " text-xs lg:text-lg hover:bg-slate-200 p-1 rounded-md"
+                  ? "lg:text-lg text-sm text-lighttext bg-slate-300 p-1 rounded-md"
+                  : " text-sm lg:text-lg hover:bg-slate-200 p-1 rounded-md"
               }
             >
               Home
@@ -24,8 +24,8 @@ function Navbar() {
               to="/skills"
               className={({ isActive }) =>
                 isActive
-                  ? "lg:text-lg text-xs text-lighttext  bg-slate-300 p-1 rounded-md"
-                  : "text-xs lg:text-lg hover:bg-slate-200 p-1 rounded-md "
+                  ? "lg:text-lg text-sm text-lighttext  bg-slate-300 p-1 rounded-md"
+                  : "text-sm lg:text-lg hover:bg-slate-200 p-1 rounded-md "
               }
             >
               Skills
@@ -36,8 +36,8 @@ function Navbar() {
               to="/projects"
               className={({ isActive }) =>
                 isActive
-                  ? "lg:text-lg text-xs text-lighttext bg-slate-300 p-1 rounded-md"
-                  : "text-xs lg:text-lg hover:bg-slate-200 p-1 rounded-md"
+                  ? "lg:text-lg text-sm text-lighttext bg-slate-300 p-1 rounded-md"
+                  : "text-sm lg:text-lg hover:bg-slate-200 p-1 rounded-md"
               }
             >
               Projects
@@ -48,8 +48,8 @@ function Navbar() {
               to="/contact"
               className={({ isActive }) =>
                 isActive
-                  ? "lg:text-lg text-xs text-lighttext bg-slate-300  p-1 rounded-md"
-                  : "text-xs lg:text-lg hover:bg-slate-200 p-1 rounded-md"
+                  ? "lg:text-lg text-sm text-lighttext bg-slate-300  p-1 rounded-md"
+                  : "text-sm lg:text-lg hover:bg-slate-200 p-1 rounded-md"
               }
             >
               Contact

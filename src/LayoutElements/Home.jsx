@@ -22,7 +22,7 @@ function Home() {
 
   useState(() => {
     setTimeout(() => {
-      setDisplay("top-10");
+      setDisplay("top-14");
     }, 2000);
   }, []);
   return (
@@ -40,7 +40,7 @@ function Home() {
           onMouseLeave={() => setTip(false)}
         >
           {tip && (
-            <span className="text-base text-red-400 absolute top-0 left-12">
+            <span className="text-base text-red-400 absolute top-1 left-14">
               Resume
             </span>
           )}
