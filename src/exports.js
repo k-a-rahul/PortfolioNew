@@ -12,6 +12,7 @@ import RESUMEICON from "../src/Assets/Resumeicon.png";
 import PIC from "../src/Assets/PIC22.png";
 import SIGN from "../src/Assets/RahulSign1.png";
 import NOIMAGE from "../src/Assets/NOIMAGE.jpg";
+import CURSOR from "../src/Assets/cursor.png";
 
 export const technicalskills = [
   {
@@ -92,6 +93,7 @@ export { PIC };
 export { SIGN };
 export { RESUMEICON};
 export { NOIMAGE};
+export { CURSOR};
 
 export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";

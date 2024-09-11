@@ -20,7 +20,7 @@ function Home() {
   return (
     <>
       <Modal show={show} hide={hide} child={<Resume hide={hide} />} />
-      
+      <span className="absolute left-10 rounded-full top-10 w-8 h-8 rotate-180 bg-slate-300"></span>
       <div
         className={`w-screen h-screen text-center flex flex-col justify-center items-center gap-6 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
       >
