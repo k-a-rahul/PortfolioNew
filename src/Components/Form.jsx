@@ -115,7 +115,7 @@ function Form({label}) {
             ></textarea>
           </div>
           {
-            <button
+            <button style={{cursor:'not-allowed'}}
             onClick={handleSubmit}
             className="overflow-hidden group w-[50%] h-[40px] md:w-[30%] md:h-[42px] rounded-md text-sm text-white bg-teal-600 hover:bg-teal-700 flex justify-center items-center gap-1 text-center"
             >
