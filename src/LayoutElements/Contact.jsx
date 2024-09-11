@@ -3,6 +3,7 @@ import Form from "../Components/Form";
 import { FaGithubSquare, FaWhatsappSquare } from "react-icons/fa";
 import { ImFacebook2 } from "react-icons/im";
 
+
 function Contact() {
   const [data, setData] = useState({});
   
