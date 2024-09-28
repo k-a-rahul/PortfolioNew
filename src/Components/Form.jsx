@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react";
 import { Toaster } from "./Toaster";
 import emailjs from "@emailjs/browser";
 import { isValidData } from "../exports";
+import BTNLOADER from "../Assets/BTNLOADER.json";
+import Lottie from "lottie-react";
 
 const serviceId = "service_x7wpv5i";
 const templateId = "template_veov5tc";
@@ -9,7 +11,7 @@ const publicKey = "Iq7kRUHjE5bv9OZ3v";
 const warn = "bg-red-500";
 const success = "bg-green-500";
 
-function Form({label}) {
+function Form({ label }) {
   const form = useRef();
   const toastref = useRef();
   const [userdata, setUserdata] = useState({
@@ -18,6 +20,7 @@ function Form({label}) {
     message: "",
   });
 
+  const [btnloader, setBtnloader] = useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
     setUserdata((userdata) => ({
@@ -28,11 +31,9 @@ function Form({label}) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
     const { name, email, message } = userdata;
-
-    const notify = ({ message, bg }) =>toastref.current.showToast({ message: `${message}`, bg: `${bg}` });
-
+    const notify = ({ message, bg }) =>
+      toastref.current.showToast({ message: `${message}`, bg: `${bg}` });
     if (!isValidData(name) || !isValidData(email) || !isValidData(message)) {
       notify({ message: "All Fields are Required", bg: warn });
     } else if (name.length < 4 || name.length > 20) {
@@ -47,6 +48,7 @@ function Form({label}) {
         bg: warn,
       });
     } else {
+      setBtnloader(true)
       try {
         const response = await emailjs.sendForm(
           serviceId,
@@ -66,6 +68,7 @@ function Form({label}) {
       } catch (error) {
         notify({ message: error, bg: warn });
       }
+      setBtnloader(false)
     }
   };
 
@@ -78,7 +81,7 @@ function Form({label}) {
           className="bg-slate-300 w-full h-full flex flex-col justify-start shadow-xl rounded px-8 pt-6 pb-8 mb-4"
         >
           <label className="block text-text text-2xl font-bold mb-2">
-            {label ? label:"Let's have a Talk on this.."}
+            {label ? label : "Let's have a Talk on this.."}
           </label>
           <div className="w-[75%] mb-2">
             <input
@@ -115,12 +118,16 @@ function Form({label}) {
             ></textarea>
           </div>
           {
-            <button 
-            onClick={handleSubmit}
-            className="overflow-hidden group w-[50%] h-[40px] md:w-[30%] md:h-[42px] rounded-md text-xs text-white bg-teal-600 hover:bg-teal-700 flex justify-center items-center gap-1 text-center"
+            <button
+              onClick={handleSubmit}
+              className="overflow-hidden group w-[50%] h-[40px] md:w-[25%] md:h-[42px] rounded-md text-xs text-white bg-button hover:bg-green-400 flex justify-center items-center gap-1 text-center"
             >
-            {'Send Message'}
-          </button>
+              {btnloader ? (
+                <Lottie className="text-3xl" animationData={BTNLOADER} />
+              ) : (
+                "Send Message"
+              )}
+            </button>
           }
         </form>
       </div>

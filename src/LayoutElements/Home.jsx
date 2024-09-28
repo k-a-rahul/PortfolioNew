@@ -1,66 +1,89 @@
 import { Typewriter } from "react-simple-typewriter";
+import { MdOutlinePictureAsPdf } from "react-icons/md";
+import { LuZoomIn } from "react-icons/lu";
+import { LuZoomOut } from "react-icons/lu";
+import { ImCross } from "react-icons/im";
 
 import { PIC, RESUME0, RESUME1, RESUME2, RESUMEICON, SIGN } from "../exports";
 
 import Modal from "../Components/Modal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Loader } from "./Loader";
 
 const Myname = "<Rahul-Kumar/>";
 
 function Home() {
-  const [show, setShow] = useState(false);
-  const [display, setDisplay] = useState("-top-40");
-  const [tip, setTip] = useState(false);
-  const [zoom,setZoom] = useState(null)
-
-  const hide = () => setShow(false);
-
-  useState(() => {
+  useEffect(() => {
+    setLoader(true);
     const timer = setTimeout(() => {
       setDisplay("top-14");
-    }, 2000);
+      setLoader(false);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  const [show, setShow] = useState(false);
+  const [display, setDisplay] = useState("-top-40");
+  const [zoom, setZoom] = useState(1);
+  const [loader, setLoader] = useState(false);
+  const hide = () => setShow(false);
+
   const resumes = [RESUME0, RESUME1, RESUME2];
 
   return (
     <>
+      {loader && <Loader />}
       <Modal
         show={show}
         hide={hide}
         child={
           <>
-            
-            <div
-              onMouseEnter={(e) => {}}
-              className="w-[50%] h-screen overflow-scroll border-2 bg-lightergray"
-            >
-              <a
-                href="https://drive.google.com/file/d/1xsaDYrCZqzhMa10mILKEJkPS0yvwCPIM/view?usp=sharing"
-                target="_blank"
-              >
-                <button className="relative right-[20%]">
-                  Download Resume
+            <div className="w-[100%] sm:w-[40%] h-full overflow-scroll border-2 bg-lightergray">
+              <div className="w-full z-10 absolute top-5 left-0 flex justify-center gap-20 items-center">
+                <a
+                  href="https://drive.google.com/file/d/1xsaDYrCZqzhMa10mILKEJkPS0yvwCPIM/view?usp=sharing"
+                  target="_blank"
+                >
+                  <button className="text-xl sm:text-3xl hover:opacity-50">
+                    <MdOutlinePictureAsPdf />
+                  </button>
+                </a>
+                <button
+                  onClick={() => setShow(false)}
+                  className=" text-base sm:text-2xl hover:opacity-50"
+                >
+                  <ImCross />
                 </button>
-              </a>
-              <button
-                onClick={() => setShow(false)}
-                className="relative left-[20%]"
-              >
-                CLOSE
-              </button>
+              </div>
               {resumes.map((item) => {
                 return (
-                  <div key={item} className="w-full transition-all">
+                  <div
+                    key={item}
+                    className="transition-all overflow-scroll bg-lightergray"
+                  >
                     <img
+                      onMouseMove={(e) => {}}
+                      style={{ scale: `${zoom}` }}
                       src={item}
-                      className={`w-full h-full hover:scale-[${zoom}px]`}
                       alt="image"
                     />
-                    {zoom && <div className="w-60 bg-transparent">{}</div>}
                   </div>
                 );
               })}
+              <div className="absolute bottom-10 left-0 w-full flex justify-center gap-10 items-center">
+                <button
+                  onClick={() => setZoom((prev) => prev + 0.1)}
+                  className="text-2xl sm:text-3xl hover:opacity-50"
+                >
+                  <LuZoomIn />
+                </button>
+                <button
+                  onClick={() => setZoom((prev) => prev - 0.1)}
+                  className=" text-2xl sm:text-3xl hover:opacity-50"
+                >
+                  <LuZoomOut />
+                </button>
+              </div>
             </div>
           </>
         }
@@ -68,19 +91,7 @@ function Home() {
       <div
         className={`w-screen h-screen text-center flex flex-col justify-center items-center gap-6 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
       >
-        <div
-          id="resume"
-          className="absolute -left-1 top-1"
-          onMouseEnter={() => {
-            setTip(true);
-          }}
-          onMouseLeave={() => setTip(false)}
-        >
-          {tip && (
-            <span className="text-base text-red-400 absolute top-1 left-14">
-              Resume
-            </span>
-          )}
+        <div id="resume" className="absolute -left-1 top-1">
           <button onClick={() => setShow(true)}>
             <img
               className="mx-4 w-8 hover:scale-105 transition-all"
@@ -133,16 +144,20 @@ function Home() {
               </p>
               <p className="p-2 text-sm md:text-base lg:text-lg text-black tracking-tighter lg:tracking-normal">
                 Meet Rahul, A Tech Professional With a keen eye for design and a
-                strong technical skill set, I specialize in translating ideas
+                strong technical skill set, Who specialize in translating ideas
                 into seamless, interactive interfaces. On the way to build
                 something incredible.
               </p>
             </span>
           </div>
         </div>
-        <div className="absolute overflow-hidden -rotate-12 w-44 md:w-[20%] bottom-4 right-6 md:bottom-10 md:right-10">
-          <img src={SIGN} className="w-full" alt="" />
-        </div>
+        {loader ? (
+          ""
+        ) : (
+          <div className="absolute overflow-hidden -rotate-12 w-44 md:w-[20%] bottom-4 right-6 md:bottom-10 md:right-10">
+            <img src={SIGN} className="w-full" alt="" />
+          </div>
+        )}
       </div>
     </>
   );
