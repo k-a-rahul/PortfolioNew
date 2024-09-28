@@ -6,13 +6,17 @@ import REDUX from "../src/LOGOs/Redux.png";
 import TAILWIND from "../src/LOGOs/Tailwind.png";
 import GIT from "../src/Assets/GITICON.png";
 import TODO from "../src/Assets/TodoImage.jpg";
-import RESUME from "../src/Assets/Resume.jpg";
-import RESUMEPDF from "../src/Assets/Resume.pdf";
+// import RESUMEPDF from "../src/Resumes";
 import RESUMEICON from "../src/Assets/Resumeicon.png";
 import PIC from "../src/Assets/PIC22.png";
 import SIGN from "../src/Assets/RahulSign1.png";
 import NOIMAGE from "../src/Assets/NOIMAGE.jpg";
 import CURSOR from "../src/Assets/cursor.png";
+import WALLZPIC1 from "../src/Assets/Page0.png";
+import  WALLZPIC2 from "../src/Assets/Page1.png";
+import  RESUME0 from "../src/Resumes/Resume0.jpg";
+import  RESUME1 from "../src/Resumes/Resume1.jpg";
+import  RESUME2 from "../src/Resumes/Resume2.jpg";
 
 export const technicalskills = [
   {
@@ -87,13 +91,15 @@ export const professionalskills = [
 
 export { HTML, CSS, JS, REACT, REDUX, TAILWIND,GIT };
 export { TODO };
-export { RESUME };
-export { RESUMEPDF };
+// export { RESUMEPDF };
 export { PIC };
 export { SIGN };
 export { RESUMEICON};
 export { NOIMAGE};
 export { CURSOR};
+export { WALLZPIC1};
+export { WALLZPIC2};
+export { RESUME0,RESUME1,RESUME2}
 
 export const isValidData = (data) => {
   return data !== null && data !== undefined && data !== "";

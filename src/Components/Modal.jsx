@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 
-function Modal({ show, child, hide, w, h }) {
+function Modal({ show, child, w, h }) {
   return (
     <>
       {show && (
         <div
-          className={`backdrop-blur-sm absolute top-0 w-full h-full z-50 flex justify-center items-center text-center overflow-y-scroll`}
+          className={`backdrop-brightness-50 absolute top-0 w-full h-full z-50 flex justify-center items-center text-center overflow-y-scroll`}
         >
           <div
             id="movable"
