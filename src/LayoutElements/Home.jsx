@@ -18,7 +18,7 @@ function Home() {
     const timer = setTimeout(() => {
       setDisplay("top-14");
       setLoader(false);
-    }, 500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,7 +38,7 @@ function Home() {
         hide={hide}
         child={
           <>
-            <div className="w-[100%] sm:w-[40%] h-full overflow-scroll border-2 bg-lightergray">
+            <div className="w-[100%] sm:w-[50%] h-full overflow-scroll border-2 bg-lightergray">
               <div className="w-full z-10 absolute top-5 left-0 flex justify-center gap-20 items-center">
                 <a
                   href="https://drive.google.com/file/d/1xsaDYrCZqzhMa10mILKEJkPS0yvwCPIM/view?usp=sharing"
@@ -70,7 +70,7 @@ function Home() {
                   </div>
                 );
               })}
-              <div className="absolute bottom-10 left-0 w-full flex justify-center gap-10 items-center">
+              {/* <div className="absolute bottom-10 left-0 w-full flex justify-center gap-10 items-center">
                 <button
                   onClick={() => setZoom((prev) => prev + 0.1)}
                   className="text-2xl sm:text-3xl hover:opacity-50"
@@ -83,7 +83,7 @@ function Home() {
                 >
                   <LuZoomOut />
                 </button>
-              </div>
+              </div> */}
             </div>
           </>
         }

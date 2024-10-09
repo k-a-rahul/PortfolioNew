@@ -8,7 +8,7 @@ function Projects() {
     setLoader(true);
     const timer = setTimeout(() => {
       setLoader(false);
-    }, 500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
   const [loader, setLoader] = useState(false);

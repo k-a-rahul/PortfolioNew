@@ -10,7 +10,7 @@ function Contact() {
     setLoader(true);
     const timer = setTimeout(() => {
       setLoader(false);
-    }, 500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
 
