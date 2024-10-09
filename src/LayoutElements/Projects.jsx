@@ -8,15 +8,14 @@ function Projects() {
     setLoader(true);
     const timer = setTimeout(() => {
       setLoader(false);
-    }, 1000);
+    }, 500);
     return () => clearTimeout(timer);
   }, []);
   const [loader, setLoader] = useState(false);
   return (
     <>
-      {" "}
       {loader && <Loader />}
-      <div className=" overflow-hidden w-screen h-screen flex flex-col gap-5 justify-center items-center text-center">
+      <div className=" bg-gradient-to-r from-bg-lime to-bg-blue w-screen h-screen flex flex-col gap-5 justify-center items-center text-center">
         <div
           id="mainDiv"
           className="object-cover w-[95%] grid grid-cols-1 sm:grid-cols-2 gap-4 justify-around content-center items-center "

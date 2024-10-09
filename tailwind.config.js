@@ -17,6 +17,8 @@ export default {
         warn: "FF0800",
         success: "03C03C",
         info: "FF9966",
+        'bg-lime':'#cdffd8',
+        'bg-blue':'#9abdff'
       },
       animation: {
         "bounce-short": "bounce 20s linear infinite ",

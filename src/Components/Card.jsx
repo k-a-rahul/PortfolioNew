@@ -8,7 +8,7 @@ function Card({ img, width, text, description, onClick, button }) {
   return (
     <div
       onClick={onClick}
-      className="bg-lightergray transition-all hover:bg-slate-200 my-auto rounded-xl p-2 h-[320px] sm:h-[420px] flex flex-col justify-center items-center gap-1"
+      className="bg-white transition-all hover:bg-slate-200 my-auto rounded-xl p-2 h-[320px] sm:h-[420px] flex flex-col justify-center items-center gap-1"
       id="card1"
     >
       <div className="w-full h-full flex flex-col justify-center items-center ">

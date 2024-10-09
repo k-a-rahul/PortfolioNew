@@ -17,7 +17,7 @@ import  WALLZPIC2 from "../src/Assets/Page1.png";
 import  RESUME0 from "../src/Resumes/Resume0.jpg";
 import  RESUME1 from "../src/Resumes/Resume1.jpg";
 import  RESUME2 from "../src/Resumes/Resume2.jpg";
-import LOADER from "../src/Assets/LoaderAnimation2.json"
+import LOADER from "../src/Assets/Loader.json"
 
 export const technicalskills = [
   {

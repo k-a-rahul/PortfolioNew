@@ -78,7 +78,7 @@ function Form({ label }) {
       <div className="w-[100%]">
         <form
           ref={form}
-          className="bg-slate-300 w-full h-full flex flex-col justify-start shadow-xl rounded px-8 pt-6 pb-8 mb-4"
+          className="bg-white w-full h-full flex flex-col justify-start shadow-xl rounded-xl px-8 pt-6 pb-8 mb-4"
         >
           <label className="block text-text text-2xl font-bold mb-2">
             {label ? label : "Let's have a Talk on this.."}
