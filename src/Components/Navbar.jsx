@@ -6,7 +6,7 @@ function Navbar() {
   return (
     <>
       {
-        <div className="md:w-auto group p-2 cursor-pointer absolute top-0 right-1 sm:gap-2 md:absolute md:top-0 md:right-2  overflow-hidden z-10 flex justify-center items-center">
+        <div className="md:w-auto group p-2 cursor-pointer absolute top-0 right-1 gap-1 sm:gap-2 md:absolute md:top-0 md:right-2  overflow-hidden z-10 flex justify-center items-center">
           <button>
             <NavLink
               to="/"

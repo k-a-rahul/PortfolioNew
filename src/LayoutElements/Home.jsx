@@ -108,7 +108,7 @@ function Home() {
         </div>
         <div
           id="one"
-          className=" w-[60%] md:w-[50%] flex flex-col justify-center gap-2 items-center md:items-center"
+          className=" w-[60%] md:w-[40%] flex flex-col justify-center gap-2 items-center md:items-center"
         >
           <img src={PIC} className="w-full lg:w-full" alt="image" />
         </div>
