@@ -16,7 +16,7 @@ function Contact() {
 
   const [loader, setLoader] = useState(false);
   const h = 250;
-  const w = "100%";
+  const w = '100%';
   return (
     <>
       {loader && <Loader />}

@@ -8,8 +8,8 @@ import Lottie from "lottie-react";
 const serviceId = "service_x7wpv5i";
 const templateId = "template_veov5tc";
 const publicKey = "Iq7kRUHjE5bv9OZ3v";
-const warn = "bg-red-500";
-const success = "bg-green-500";
+const warn = "bg-red-400";
+const success = "bg-green-400";
 
 function Form({ label }) {
   const form = useRef();
