@@ -106,16 +106,18 @@ function Home() {
           <div className="ml-3 absolute w-2 h-2 sm:w-3 sm:h-3 bg-green-600 rounded-full animate-pulse"></div>
           Available Now !
         </div>
-        <div
+
+        {/* <div
           id="one"
-          className=" w-[60%] md:w-[40%] flex flex-col justify-center gap-2 items-center md:items-center"
+          className="md:absolute md:bottom-0 right-0 w-[70%] md:w-[30%] flex flex-col justify-center gap-2 items-center md:items-center"
         >
-          <img src={PIC} className="w-full lg:w-full" alt="image" />
-        </div>
+          
+          <img src={PIC} className="w-full h-full lg:w-full rounded-2xl bg-bg-blue p-1 hover:bg-opacity-50" alt="image" />
+        </div> */}
 
         <div
           id="two"
-          className="p-1 w-[90%] z-10  md:w-1/2 flex flex-col justify-center items-center "
+          className="p-1 w-[100%] z-10 flex flex-col justify-center items-center "
         >
           <div
             aria-label="aboutme"
