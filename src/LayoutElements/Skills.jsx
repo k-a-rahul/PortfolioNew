@@ -3,18 +3,18 @@ import { professionalskills, technicalskills } from "../exports";
 import { Loader } from "./Loader";
 
 function Skills() {
-  useEffect(() => {
-    setLoader(true);
-    const timer = setTimeout(() => {
-      setLoader(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   setLoader(true);
+  //   const timer = setTimeout(() => {
+  //     setLoader(false);
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
   const [loader, setLoader] = useState(false);
   return (
     <>
     {loader && <Loader />}
-      <div className="mt-0 w-screen h-full bg-gradient-to-r from-bg-lime to-bg-blue flex flex-col justify-center items-center">
+      <div className="mt-0 w-screen h-full  flex flex-col justify-center items-center">
         <div className="p-3 flex justify-center items-center flex-wrap gap-3  ">
           {professionalskills.map((item) => {
             return (

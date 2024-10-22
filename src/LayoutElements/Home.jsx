@@ -14,10 +14,8 @@ const Myname = "<Rahul-Kumar/>";
 
 function Home() {
   useEffect(() => {
-    setLoader(true);
     const timer = setTimeout(() => {
       setDisplay("top-14");
-      setLoader(false);
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -89,12 +87,12 @@ function Home() {
         }
       />
       <div
-        className={`w-screen h-screen text-center bg-gradient-to-r from-bg-lime to-bg-blue flex flex-col justify-center items-center gap-6 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
+        className={`w-screen h-screen text-center  flex flex-col justify-center items-center gap-6 sm:mt-0 sm:p-0 sm:flex-row md:justify-evenly lg:items-center lg:justify-around sm:gap-0 text-white`}
       >
         <div id="resume" className="absolute -left-1 top-1">
           <button onClick={() => setShow(true)}>
             <img
-              className="mx-4 w-8 hover:scale-105 transition-all"
+              className="mx-4 w-8 text-white hover:scale-105 transition-all"
               src={RESUMEICON}
             />
           </button>

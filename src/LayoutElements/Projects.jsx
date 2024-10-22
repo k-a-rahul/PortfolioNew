@@ -4,18 +4,18 @@ import { TODO, WALLZPIC1 } from "../exports";
 import { Loader } from "./Loader";
 
 function Projects() {
-  useEffect(() => {
-    setLoader(true);
-    const timer = setTimeout(() => {
-      setLoader(false);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
+  // useEffect(() => {
+  //   setLoader(true);
+  //   const timer = setTimeout(() => {
+  //     setLoader(false);
+  //   }, 1000);
+  //   return () => clearTimeout(timer);
+  // }, []);
   const [loader, setLoader] = useState(false);
   return (
     <>
       {loader && <Loader />}
-      <div className=" bg-gradient-to-r from-bg-lime to-bg-blue w-screen h-screen flex flex-col gap-5 justify-center items-center text-center">
+      <div className=" w-screen h-screen flex flex-col gap-5 justify-center items-center text-center">
         <div
           id="mainDiv"
           className="object-cover w-[95%] grid grid-cols-1 sm:grid-cols-2 gap-4 justify-around content-center items-center "
